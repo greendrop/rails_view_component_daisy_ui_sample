@@ -16,3 +16,39 @@ AllCops:
     - 'tmp/**/*'
     - 'vendor/bundle/**/*'
   TargetRubyVersion: 3.4
+
+Layout/LineLength:
+  Max: 120
+
+Naming/MemoizedInstanceVariableName:
+  EnforcedStyleForLeadingUnderscores: required
+
+Metrics/AbcSize:
+  Max: 50
+
+Metrics/BlockLength:
+  Exclude:
+    - 'config/environments/production.rb'
+    - 'config/environments/development.rb'
+    - 'config/routes.rb'
+
+Metrics/ClassLength:
+  Max: 200
+
+Metrics/CyclomaticComplexity:
+  Max: 15
+
+Metrics/MethodLength:
+  Max: 50
+
+Metrics/ParameterLists:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/HashSyntax:
+  EnforcedShorthandSyntax: always
