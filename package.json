@@ -2,6 +2,7 @@
   "private": true,
   "type": "module",
   "devDependencies": {
+    "daisyui": "^5.0.43",
     "vite": "^5.4.19",
     "vite-plugin-rails": "^0.5.0"
   },
