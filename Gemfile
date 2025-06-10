@@ -24,6 +24,8 @@ gem 'vite_rails'
 group :development, :test do
   gem 'brakeman', require: false
   gem 'debug', platforms: %i[mri windows], require: 'debug/prelude'
+  gem 'rspec_junit_formatter', require: false
+  gem 'rspec-rails'
   gem 'rubocop', require: false
   gem 'rubocop-capybara', require: false
   gem 'rubocop-factory_bot', require: false
@@ -35,4 +37,13 @@ end
 
 group :development do
   gem 'web-console'
+end
+
+group :test do
+  gem 'capybara', require: false
+  gem 'capybara-playwright-driver', require: false
+  gem 'faker', require: false
+  gem 'shoulda-matchers', require: false
+  gem 'simplecov', require: false
+  gem 'webmock'
 end
