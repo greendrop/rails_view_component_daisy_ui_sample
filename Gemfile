@@ -24,6 +24,7 @@ gem 'vite_rails'
 group :development, :test do
   gem 'brakeman', require: false
   gem 'debug', platforms: %i[mri windows], require: 'debug/prelude'
+  gem 'factory_bot_rails'
   gem 'rspec_junit_formatter', require: false
   gem 'rspec-rails'
   gem 'rubocop', require: false
