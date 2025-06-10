@@ -148,9 +148,10 @@ module DaisyUi
       return @_button_class if @_button_class
 
       classes = default_classes
-      classes << override_classes if override_classes
+      classes = override_classes if override_classes
       classes << append_classes if append_classes
       classes.concat(size_classes) if size_classes.present?
+      classes << 'btn-disabled' if disabled
       classes.join(' ')
 
       @_button_class = classes
