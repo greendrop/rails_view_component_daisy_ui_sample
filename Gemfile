@@ -27,6 +27,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'rspec_junit_formatter', require: false
   gem 'rspec-rails'
+  gem 'rspec-snapshot'
   gem 'rubocop', require: false
   gem 'rubocop-capybara', require: false
   gem 'rubocop-factory_bot', require: false
