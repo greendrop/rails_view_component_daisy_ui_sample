@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   root to: 'homes#show'
 
   resource :homes, only: [:show]
+
+  mount Lookbook::Engine, at: '/lookbook' if Rails.env.development?
 end
