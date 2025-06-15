@@ -74,4 +74,7 @@ Rails.application.configure do
 
   # Lookbook
   config.lookbook.preview_paths << 'spec/components/previews'
+  config.lookbook.preview_display_options = {
+    theme: %w[light dark]
+  }
 end

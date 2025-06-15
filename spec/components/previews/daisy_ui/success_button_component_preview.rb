@@ -5,6 +5,8 @@ module DaisyUi
   class SuccessButtonComponentPreview < Lookbook::Preview
     COMPONENT_CLASS = DaisyUi::SuccessButtonComponent
 
+    layout 'component_preview'
+
     # @param content text
     # @param override_classes text
     # @param append_classes text

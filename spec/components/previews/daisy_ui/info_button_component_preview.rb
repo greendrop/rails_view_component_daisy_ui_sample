@@ -5,6 +5,8 @@ module DaisyUi
   class InfoButtonComponentPreview < Lookbook::Preview
     COMPONENT_CLASS = DaisyUi::InfoButtonComponent
 
+    layout 'component_preview'
+
     # @param content text
     # @param override_classes text
     # @param append_classes text

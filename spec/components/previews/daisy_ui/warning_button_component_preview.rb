@@ -5,6 +5,8 @@ module DaisyUi
   class WarningButtonComponentPreview < Lookbook::Preview
     COMPONENT_CLASS = DaisyUi::WarningButtonComponent
 
+    layout 'component_preview'
+
     # @param content text
     # @param override_classes text
     # @param append_classes text
