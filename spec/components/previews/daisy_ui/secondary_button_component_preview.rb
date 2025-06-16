@@ -17,6 +17,10 @@ module DaisyUi
     # @param responsive_medium_size select :size_options
     # @param responsive_large_size select :size_options
     # @param responsive_extra_large_size select :size_options
+    # @param wide toggle
+    # @param block toggle
+    # @param square toggle
+    # @param circle toggle
     # @param disabled toggle
     def default(
       content: 'Content',
@@ -28,6 +32,10 @@ module DaisyUi
       responsive_medium_size: nil,
       responsive_large_size: nil,
       responsive_extra_large_size: nil,
+      wide: false,
+      block: false,
+      square: false,
+      circle: false,
       disabled: nil
     )
       render COMPONENT_CLASS.new(
@@ -39,6 +47,10 @@ module DaisyUi
         responsive_medium_size:,
         responsive_large_size:,
         responsive_extra_large_size:,
+        wide:,
+        block:,
+        square:,
+        circle:,
         disabled:
       ).with_content(content || '')
     end
