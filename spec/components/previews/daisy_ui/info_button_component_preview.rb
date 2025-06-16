@@ -4,6 +4,7 @@ module DaisyUi
   # @logical_path components/daisy_ui/button
   class InfoButtonComponentPreview < Lookbook::Preview
     COMPONENT_CLASS = DaisyUi::InfoButtonComponent
+    SVG_ICON = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-[1.2em]"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>' # rubocop:disable Layout/LineLength
 
     layout 'component_preview'
 
@@ -71,6 +72,38 @@ module DaisyUi
     def size_extra_large(content: 'Extra Large')
       render COMPONENT_CLASS.new(
         size: COMPONENT_CLASS::SIZE_EXTRA_LARGE
+      ).with_content(content)
+    end
+
+    # @!endgroup
+
+    # @!group Modifiers
+
+    def modifier_wide(content: 'Wide')
+      render COMPONENT_CLASS.new(
+        wide: true
+      ).with_content(content)
+    end
+
+    def modifier_block(content: 'Block')
+      render COMPONENT_CLASS.new(
+        block: true
+      ).with_content(content)
+    end
+
+    def modifier_square(
+      content: SVG_ICON.html_safe # rubocop:disable Rails/OutputSafety
+    )
+      render COMPONENT_CLASS.new(
+        square: true
+      ).with_content(content)
+    end
+
+    def modifier_circle(
+      content: SVG_ICON.html_safe # rubocop:disable Rails/OutputSafety
+    )
+      render COMPONENT_CLASS.new(
+        circle: true
       ).with_content(content)
     end
 

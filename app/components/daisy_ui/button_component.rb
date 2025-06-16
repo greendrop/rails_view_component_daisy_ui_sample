@@ -18,6 +18,10 @@ module DaisyUi
       responsive_medium_size: nil,
       responsive_large_size: nil,
       responsive_extra_large_size: nil,
+      wide: false,
+      block: false,
+      square: false,
+      circle: false,
       data: nil,
       disabled: nil,
       accept: nil,
@@ -50,6 +54,10 @@ module DaisyUi
       @responsive_medium_size = responsive_medium_size
       @responsive_large_size = responsive_large_size
       @responsive_extra_large_size = responsive_extra_large_size
+      @wide = wide
+      @block = block
+      @square = square
+      @circle = circle
       @data = data
       @disabled = disabled
       @accept = accept
@@ -87,6 +95,10 @@ module DaisyUi
                 :responsive_medium_size,
                 :responsive_large_size,
                 :responsive_extra_large_size,
+                :wide,
+                :block,
+                :square,
+                :circle,
                 :data,
                 :disabled,
                 :accept,
@@ -120,7 +132,7 @@ module DaisyUi
         tabindex:,
         accesskey:,
         id:,
-        class: buton_class,
+        class: button_class,
         title:,
         style:,
         dir:,
@@ -144,14 +156,14 @@ module DaisyUi
       self.class::DEFAULT_CLASSES.dup
     end
 
-    def buton_class
+    def button_class
       return @_button_class if @_button_class
 
       classes = default_classes
       classes = override_classes if override_classes
       classes << append_classes if append_classes
       classes.concat(size_classes) if size_classes.present?
-      classes << 'btn-disabled' if disabled
+      classes.concat(modifier_classes) if modifier_classes.present?
       classes.join(' ')
 
       @_button_class = classes
@@ -169,6 +181,19 @@ module DaisyUi
       classes << "xl:#{SIZE_EXTRA_LARGE}" if responsive_extra_large_size
 
       @_size_classes = classes
+    end
+
+    def modifier_classes
+      return @_modifier_classes if @_modifier_classes
+
+      classes = []
+      classes << 'btn-wide' if wide
+      classes << 'btn-block' if block
+      classes << 'btn-square' if square
+      classes << 'btn-circle' if circle
+      classes << 'btn-disabled' if disabled
+
+      @_modifier_classes = classes
     end
   end
 end
