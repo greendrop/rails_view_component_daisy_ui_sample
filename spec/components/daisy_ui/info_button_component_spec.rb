@@ -32,12 +32,12 @@ RSpec.describe DaisyUi::InfoButtonComponent, type: :component do
     context 'responsive_sizeを指定' do
       let!(:instance) do
         described_class.new(
-          size: described_class::SIZE_XSMALL,
-          responsive_xsmall_size: described_class::SIZE_XSMALL,
+          size: described_class::SIZE_EXTRA_SMALL,
+          responsive_extra_small_size: described_class::SIZE_EXTRA_SMALL,
           responsive_small_size: described_class::SIZE_SMALL,
           responsive_medium_size: described_class::SIZE_MEDIUM,
           responsive_large_size: described_class::SIZE_LARGE,
-          responsive_xlarge_size: described_class::SIZE_XLARGE
+          responsive_extra_large_size: described_class::SIZE_EXTRA_LARGE
         ).with_content('Responsive Sizes')
       end
       let!(:snapshot_name) { File.join(snapshot_prefix, 'responsive_sizes') }

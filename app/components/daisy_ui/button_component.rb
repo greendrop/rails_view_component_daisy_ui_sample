@@ -3,21 +3,21 @@
 module DaisyUi
   class ButtonComponent < ViewComponent::Base
     DEFAULT_CLASSES = ['btn'].freeze
-    SIZE_XSMALL = 'btn-xs'
+    SIZE_EXTRA_SMALL = 'btn-xs'
     SIZE_SMALL = 'btn-sm'
     SIZE_MEDIUM = 'btn-md'
     SIZE_LARGE = 'btn-lg'
-    SIZE_XLARGE = 'btn-xl'
+    SIZE_EXTRA_LARGE = 'btn-xl'
 
     def initialize(
       override_classes: nil,
       append_classes: nil,
       size: nil,
-      responsive_xsmall_size: nil,
+      responsive_extra_small_size: nil,
       responsive_small_size: nil,
       responsive_medium_size: nil,
       responsive_large_size: nil,
-      responsive_xlarge_size: nil,
+      responsive_extra_large_size: nil,
       data: nil,
       disabled: nil,
       accept: nil,
@@ -45,11 +45,11 @@ module DaisyUi
       @override_classes = override_classes
       @append_classes = append_classes
       @size = size
-      @responsive_xsmall_size = responsive_xsmall_size
+      @responsive_extra_small_size = responsive_extra_small_size
       @responsive_small_size = responsive_small_size
       @responsive_medium_size = responsive_medium_size
       @responsive_large_size = responsive_large_size
-      @responsive_xlarge_size = responsive_xlarge_size
+      @responsive_extra_large_size = responsive_extra_large_size
       @data = data
       @disabled = disabled
       @accept = accept
@@ -82,11 +82,11 @@ module DaisyUi
     attr_reader :override_classes,
                 :append_classes,
                 :size,
-                :responsive_xsmall_size,
+                :responsive_extra_small_size,
                 :responsive_small_size,
                 :responsive_medium_size,
                 :responsive_large_size,
-                :responsive_xlarge_size,
+                :responsive_extra_large_size,
                 :data,
                 :disabled,
                 :accept,
@@ -162,11 +162,11 @@ module DaisyUi
 
       classes = []
       classes << size if size
-      classes << "xs:#{SIZE_XSMALL}" if responsive_xsmall_size
+      classes << "xs:#{SIZE_EXTRA_SMALL}" if responsive_extra_small_size
       classes << "sm:#{SIZE_SMALL}" if responsive_small_size
       classes << "md:#{SIZE_MEDIUM}" if responsive_medium_size
       classes << "lg:#{SIZE_LARGE}" if responsive_large_size
-      classes << "xl:#{SIZE_XLARGE}" if responsive_xlarge_size
+      classes << "xl:#{SIZE_EXTRA_LARGE}" if responsive_extra_large_size
 
       @_size_classes = classes
     end
