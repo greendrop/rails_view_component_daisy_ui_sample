@@ -51,19 +51,19 @@ module DaisyUi
       ).with_content(content)
     end
 
-    def size_sm(content: 'Small')
+    def size_small(content: 'Small')
       render COMPONENT_CLASS.new(
         size: COMPONENT_CLASS::SIZE_SMALL
       ).with_content(content)
     end
 
-    def size_md(content: 'Medium')
+    def size_medium(content: 'Medium')
       render COMPONENT_CLASS.new(
         size: COMPONENT_CLASS::SIZE_MEDIUM
       ).with_content(content)
     end
 
-    def size_lg(content: 'Large')
+    def size_large(content: 'Large')
       render COMPONENT_CLASS.new(
         size: COMPONENT_CLASS::SIZE_LARGE
       ).with_content(content)
