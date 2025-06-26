@@ -22,8 +22,9 @@ module DaisyUi
       block: false,
       square: false,
       circle: false,
-      data: nil,
+      active: nil,
       disabled: nil,
+      data: nil,
       accept: nil,
       readonly: nil,
       tabindex: nil,
@@ -58,8 +59,9 @@ module DaisyUi
       @block = block
       @square = square
       @circle = circle
-      @data = data
+      @active = active
       @disabled = disabled
+      @data = data
       @accept = accept
       @readonly = readonly
       @tabindex = tabindex
@@ -99,8 +101,9 @@ module DaisyUi
                 :block,
                 :square,
                 :circle,
-                :data,
+                :active,
                 :disabled,
+                :data,
                 :accept,
                 :readonly,
                 :tabindex,
@@ -164,6 +167,7 @@ module DaisyUi
       classes << append_classes if append_classes
       classes.concat(size_classes) if size_classes.present?
       classes.concat(modifier_classes) if modifier_classes.present?
+      classes.concat(behavior_classes) if behavior_classes.present?
       classes.join(' ')
 
       @_button_class = classes
@@ -191,9 +195,18 @@ module DaisyUi
       classes << 'btn-block' if block
       classes << 'btn-square' if square
       classes << 'btn-circle' if circle
-      classes << 'btn-disabled' if disabled
 
       @_modifier_classes = classes
+    end
+
+    def behavior_classes
+      return @_behavior_classes if @_behavior_classes
+
+      classes = []
+      classes << 'btn-active' if active
+      classes << 'btn-disabled' if disabled
+
+      @_behavior_classes = classes
     end
   end
 end

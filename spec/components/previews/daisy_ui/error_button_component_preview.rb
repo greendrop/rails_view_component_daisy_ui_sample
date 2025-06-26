@@ -21,6 +21,7 @@ module DaisyUi
     # @param block toggle
     # @param square toggle
     # @param circle toggle
+    # @param active toggle
     # @param disabled toggle
     def default(
       content: 'Content',
@@ -36,6 +37,7 @@ module DaisyUi
       block: false,
       square: false,
       circle: false,
+      active: nil,
       disabled: nil
     )
       render COMPONENT_CLASS.new(
@@ -51,9 +53,26 @@ module DaisyUi
         block:,
         square:,
         circle:,
+        active:,
         disabled:
       ).with_content(content || '')
     end
+
+    # @!group Behaviors
+
+    def behavior_active(content: 'Active')
+      render COMPONENT_CLASS.new(
+        active: true
+      ).with_content(content)
+    end
+
+    def behavior_disabled(content: 'Disabled')
+      render COMPONENT_CLASS.new(
+        disabled: true
+      ).with_content(content)
+    end
+
+    # @!endgroup
 
     # @!group Sizes
 
