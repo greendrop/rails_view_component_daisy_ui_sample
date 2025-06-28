@@ -9,6 +9,12 @@ module DaisyUi
     SIZE_LARGE = 'btn-lg'
     SIZE_EXTRA_LARGE = 'btn-xl'
 
+    erb_template <<~ERB
+      <%= button_tag button_options do %>
+        <%= content %>
+      <% end %>
+    ERB
+
     def initialize(
       override_classes: nil,
       append_classes: nil,
