@@ -8,6 +8,7 @@ module DaisyUi
 
     layout 'component_preview'
 
+    # @label Default
     # @param content text
     # @param override_classes text
     # @param append_classes text
@@ -59,62 +60,79 @@ module DaisyUi
     end
 
     # @!group Behaviors
+
+    # @label Active
     def behavior_active(content: 'Active')
       render COMPONENT_CLASS.new(
         active: true
       ).with_content(content)
     end
 
+    # @label Disabled
     def behavior_disabled(content: 'Disabled')
       render COMPONENT_CLASS.new(
         disabled: true
       ).with_content(content)
     end
 
+    # @!endgroup
+
     # @!group Sizes
+
+    # @label Extra Small
     def size_extra_small(content: 'Extra Small')
       render COMPONENT_CLASS.new(
         size: COMPONENT_CLASS::SIZE_EXTRA_SMALL
       ).with_content(content)
     end
 
+    # @label Small
     def size_small(content: 'Small')
       render COMPONENT_CLASS.new(
         size: COMPONENT_CLASS::SIZE_SMALL
       ).with_content(content)
     end
 
+    # @label Medium
     def size_medium(content: 'Medium')
       render COMPONENT_CLASS.new(
         size: COMPONENT_CLASS::SIZE_MEDIUM
       ).with_content(content)
     end
 
+    # @label Large
     def size_large(content: 'Large')
       render COMPONENT_CLASS.new(
         size: COMPONENT_CLASS::SIZE_LARGE
       ).with_content(content)
     end
 
+    # @label Extra Large
     def size_extra_large(content: 'Extra Large')
       render COMPONENT_CLASS.new(
         size: COMPONENT_CLASS::SIZE_EXTRA_LARGE
       ).with_content(content)
     end
 
+    # @!endgroup
+
     # @!group Modifiers
+
+    # @label Wide
     def modifier_wide(content: 'Wide')
       render COMPONENT_CLASS.new(
         wide: true
       ).with_content(content)
     end
 
+    # @label Block
     def modifier_block(content: 'Block')
       render COMPONENT_CLASS.new(
         block: true
       ).with_content(content)
     end
 
+    # @label Square
     def modifier_square(
       content: SVG_ICON.html_safe # rubocop:disable Rails/OutputSafety
     )
@@ -123,6 +141,7 @@ module DaisyUi
       ).with_content(content)
     end
 
+    # @label Circle
     def modifier_circle(
       content: SVG_ICON.html_safe # rubocop:disable Rails/OutputSafety
     )
@@ -130,6 +149,8 @@ module DaisyUi
         circle: true
       ).with_content(content)
     end
+
+    # @!endgroup
 
     private
 
