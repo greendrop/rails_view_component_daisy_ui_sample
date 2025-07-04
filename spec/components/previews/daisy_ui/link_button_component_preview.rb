@@ -25,9 +25,9 @@ module DaisyUi
     # @param active toggle
     # @param disabled toggle
     # @param url text
-    # @param target text
     def default(
       content: 'Content',
+      url: '#',
       override_classes: nil,
       append_classes: nil,
       size: nil,
@@ -41,11 +41,10 @@ module DaisyUi
       square: false,
       circle: false,
       active: nil,
-      disabled: nil,
-      url: '#',
-      target: nil
+      disabled: nil
     )
       render COMPONENT_CLASS.new(
+        url:,
         override_classes: override_classes ? [override_classes] : nil,
         append_classes: append_classes ? [append_classes] : nil,
         size:,
@@ -59,9 +58,7 @@ module DaisyUi
         square:,
         circle:,
         active:,
-        disabled:,
-        url:,
-        target:
+        disabled:
       ).with_content(content || '')
     end
 
