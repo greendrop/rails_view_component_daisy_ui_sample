@@ -300,5 +300,290 @@ RSpec.describe DaisyUi::TableComponent, type: :component do
 
       it_behaves_like 'match snapshot'
     end
+
+    context 'zebraがtrue' do
+      let!(:instance) do
+        described_class.new(
+          zebra: true
+        ).with_content(
+          safe_join(
+            [
+              render_component_outside_view_context(
+                DaisyUi::TableCaptionComponent.new.with_content('caption')
+              ),
+              render_component_outside_view_context(
+                DaisyUi::TableHeaderComponent.new.with_content(
+                  safe_join(
+                    [
+                      render_component_outside_view_context(
+                        DaisyUi::TableHeadComponent.new.with_content('header 1')
+                      ),
+                      render_component_outside_view_context(
+                        DaisyUi::TableHeadComponent.new.with_content('header 2')
+                      ),
+                      render_component_outside_view_context(
+                        DaisyUi::TableHeadComponent.new.with_content('header 3')
+                      )
+                    ]
+                  )
+                )
+              ),
+              render_component_outside_view_context(
+                DaisyUi::TableBodyComponent.new.with_content(
+                  safe_join(
+                    [
+                      render_component_outside_view_context(
+                        DaisyUi::TableRowComponent.new.with_content(
+                          safe_join(
+                            [
+                              render_component_outside_view_context(
+                                DaisyUi::TableCellComponent.new.with_content('cell 1')
+                              ),
+                              render_component_outside_view_context(
+                                DaisyUi::TableCellComponent.new.with_content('cell 2')
+                              ),
+                              render_component_outside_view_context(
+                                DaisyUi::TableCellComponent.new.with_content('cell 3')
+                              )
+                            ]
+                          )
+                        )
+                      ),
+                      render_component_outside_view_context(
+                        DaisyUi::TableRowComponent.new.with_content(
+                          safe_join(
+                            [
+                              render_component_outside_view_context(
+                                DaisyUi::TableCellComponent.new.with_content('cell 4')
+                              ),
+                              render_component_outside_view_context(
+                                DaisyUi::TableCellComponent.new.with_content('cell 5')
+                              ),
+                              render_component_outside_view_context(
+                                DaisyUi::TableCellComponent.new.with_content('cell 6')
+                              )
+                            ]
+                          )
+                        )
+                      )
+                    ]
+                  )
+                )
+              ),
+              render_component_outside_view_context(
+                DaisyUi::TableFooterComponent.new.with_content(
+                  safe_join(
+                    [
+                      render_component_outside_view_context(
+                        DaisyUi::TableCellComponent.new.with_content('footer 1')
+                      ),
+                      render_component_outside_view_context(
+                        DaisyUi::TableCellComponent.new.with_content('footer 2')
+                      ),
+                      render_component_outside_view_context(
+                        DaisyUi::TableCellComponent.new.with_content('footer 3')
+                      )
+                    ]
+                  )
+                )
+              )
+            ]
+          )
+        )
+      end
+      let!(:snapshot_name) { File.join(snapshot_prefix, 'zebra') }
+
+      it_behaves_like 'match snapshot'
+    end
+
+    context 'pin_rowsがtrue' do
+      let!(:instance) do
+        described_class.new(
+          pin_rows: true
+        ).with_content(
+          safe_join(
+            [
+              render_component_outside_view_context(
+                DaisyUi::TableCaptionComponent.new.with_content('caption')
+              ),
+              render_component_outside_view_context(
+                DaisyUi::TableHeaderComponent.new.with_content(
+                  safe_join(
+                    [
+                      render_component_outside_view_context(
+                        DaisyUi::TableHeadComponent.new.with_content('header 1')
+                      ),
+                      render_component_outside_view_context(
+                        DaisyUi::TableHeadComponent.new.with_content('header 2')
+                      ),
+                      render_component_outside_view_context(
+                        DaisyUi::TableHeadComponent.new.with_content('header 3')
+                      )
+                    ]
+                  )
+                )
+              ),
+              render_component_outside_view_context(
+                DaisyUi::TableBodyComponent.new.with_content(
+                  safe_join(
+                    [
+                      render_component_outside_view_context(
+                        DaisyUi::TableRowComponent.new.with_content(
+                          safe_join(
+                            [
+                              render_component_outside_view_context(
+                                DaisyUi::TableCellComponent.new.with_content('cell 1')
+                              ),
+                              render_component_outside_view_context(
+                                DaisyUi::TableCellComponent.new.with_content('cell 2')
+                              ),
+                              render_component_outside_view_context(
+                                DaisyUi::TableCellComponent.new.with_content('cell 3')
+                              )
+                            ]
+                          )
+                        )
+                      ),
+                      render_component_outside_view_context(
+                        DaisyUi::TableRowComponent.new.with_content(
+                          safe_join(
+                            [
+                              render_component_outside_view_context(
+                                DaisyUi::TableCellComponent.new.with_content('cell 4')
+                              ),
+                              render_component_outside_view_context(
+                                DaisyUi::TableCellComponent.new.with_content('cell 5')
+                              ),
+                              render_component_outside_view_context(
+                                DaisyUi::TableCellComponent.new.with_content('cell 6')
+                              )
+                            ]
+                          )
+                        )
+                      )
+                    ]
+                  )
+                )
+              ),
+              render_component_outside_view_context(
+                DaisyUi::TableFooterComponent.new.with_content(
+                  safe_join(
+                    [
+                      render_component_outside_view_context(
+                        DaisyUi::TableCellComponent.new.with_content('footer 1')
+                      ),
+                      render_component_outside_view_context(
+                        DaisyUi::TableCellComponent.new.with_content('footer 2')
+                      ),
+                      render_component_outside_view_context(
+                        DaisyUi::TableCellComponent.new.with_content('footer 3')
+                      )
+                    ]
+                  )
+                )
+              )
+            ]
+          )
+        )
+      end
+      let!(:snapshot_name) { File.join(snapshot_prefix, 'pin_rows') }
+
+      it_behaves_like 'match snapshot'
+    end
+
+    context 'pin_colsがtrue' do
+      let!(:instance) do
+        described_class.new(
+          pin_cols: true
+        ).with_content(
+          safe_join(
+            [
+              render_component_outside_view_context(
+                DaisyUi::TableCaptionComponent.new.with_content('caption')
+              ),
+              render_component_outside_view_context(
+                DaisyUi::TableHeaderComponent.new.with_content(
+                  safe_join(
+                    [
+                      render_component_outside_view_context(
+                        DaisyUi::TableHeadComponent.new.with_content('header 1')
+                      ),
+                      render_component_outside_view_context(
+                        DaisyUi::TableHeadComponent.new.with_content('header 2')
+                      ),
+                      render_component_outside_view_context(
+                        DaisyUi::TableHeadComponent.new.with_content('header 3')
+                      )
+                    ]
+                  )
+                )
+              ),
+              render_component_outside_view_context(
+                DaisyUi::TableBodyComponent.new.with_content(
+                  safe_join(
+                    [
+                      render_component_outside_view_context(
+                        DaisyUi::TableRowComponent.new.with_content(
+                          safe_join(
+                            [
+                              render_component_outside_view_context(
+                                DaisyUi::TableCellComponent.new.with_content('cell 1')
+                              ),
+                              render_component_outside_view_context(
+                                DaisyUi::TableCellComponent.new.with_content('cell 2')
+                              ),
+                              render_component_outside_view_context(
+                                DaisyUi::TableCellComponent.new.with_content('cell 3')
+                              )
+                            ]
+                          )
+                        )
+                      ),
+                      render_component_outside_view_context(
+                        DaisyUi::TableRowComponent.new.with_content(
+                          safe_join(
+                            [
+                              render_component_outside_view_context(
+                                DaisyUi::TableCellComponent.new.with_content('cell 4')
+                              ),
+                              render_component_outside_view_context(
+                                DaisyUi::TableCellComponent.new.with_content('cell 5')
+                              ),
+                              render_component_outside_view_context(
+                                DaisyUi::TableCellComponent.new.with_content('cell 6')
+                              )
+                            ]
+                          )
+                        )
+                      )
+                    ]
+                  )
+                )
+              ),
+              render_component_outside_view_context(
+                DaisyUi::TableFooterComponent.new.with_content(
+                  safe_join(
+                    [
+                      render_component_outside_view_context(
+                        DaisyUi::TableCellComponent.new.with_content('footer 1')
+                      ),
+                      render_component_outside_view_context(
+                        DaisyUi::TableCellComponent.new.with_content('footer 2')
+                      ),
+                      render_component_outside_view_context(
+                        DaisyUi::TableCellComponent.new.with_content('footer 3')
+                      )
+                    ]
+                  )
+                )
+              )
+            ]
+          )
+        )
+      end
+      let!(:snapshot_name) { File.join(snapshot_prefix, 'pin_cols') }
+
+      it_behaves_like 'match snapshot'
+    end
   end
 end

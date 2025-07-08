@@ -24,7 +24,10 @@ module DaisyUi
       responsive_small_size: nil,
       responsive_medium_size: nil,
       responsive_large_size: nil,
-      responsive_extra_large_size: nil
+      responsive_extra_large_size: nil,
+      zebra: nil,
+      pin_rows: nil,
+      pin_cols: nil
     )
       @override_classes = override_classes
       @append_classes = append_classes
@@ -35,6 +38,9 @@ module DaisyUi
       @responsive_medium_size = responsive_medium_size
       @responsive_large_size = responsive_large_size
       @responsive_extra_large_size = responsive_extra_large_size
+      @zebra = zebra
+      @pin_rows = pin_rows
+      @pin_cols = pin_cols
 
       super
     end
@@ -49,7 +55,10 @@ module DaisyUi
                 :responsive_small_size,
                 :responsive_medium_size,
                 :responsive_large_size,
-                :responsive_extra_large_size
+                :responsive_extra_large_size,
+                :zebra,
+                :pin_rows,
+                :pin_cols
 
     def args
       return @_args if @_args
@@ -74,6 +83,9 @@ module DaisyUi
       return @_table_class if @_table_class
 
       classes = default_classes
+      classes << 'table-zebra' if zebra
+      classes << 'table-pin-rows' if pin_rows
+      classes << 'table-pin-cols' if pin_cols
       classes = override_classes if override_classes
       classes << append_classes if append_classes
       classes.concat(size_classes) if size_classes.present?
