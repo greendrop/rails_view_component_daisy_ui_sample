@@ -142,18 +142,11 @@ module DaisyUi
     end
 
     def options
-      values = {
+      {
         disabled:,
         size: input_size,
         maxlength:,
-        placeholder:
-      }.compact
-      values.merge!(html_options) if html_options.present?
-      values
-    end
-
-    def html_options
-      {
+        placeholder:,
         accept:,
         readonly:,
         tabindex:,
