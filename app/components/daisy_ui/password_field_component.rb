@@ -2,8 +2,6 @@
 
 module DaisyUi
   class PasswordFieldComponent < TextFieldComponent
-    DEFAULT_CLASSES = ['input'].freeze
-
     erb_template <<~ERB
       <%= password_field_tag(*args) %>
     ERB
