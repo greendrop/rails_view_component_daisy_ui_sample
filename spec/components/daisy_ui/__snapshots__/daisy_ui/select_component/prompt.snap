@@ -1,0 +1,3 @@
+<select name="color" id="color" class="select"><option value="">Select a color</option><option selected="selected" value="red">Red</option>
+<option value="green">Green</option>
+<option value="blue">Blue</option></select>
