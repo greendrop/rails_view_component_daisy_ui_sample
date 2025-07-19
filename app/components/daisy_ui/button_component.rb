@@ -10,7 +10,7 @@ module DaisyUi
     SIZE_EXTRA_LARGE = 'btn-xl'
 
     erb_template <<~ERB
-      <%= button_tag button_options do %>
+      <%= button_tag(**args) do %>
         <%= content %>
       <% end %>
     ERB
@@ -30,28 +30,7 @@ module DaisyUi
       circle: false,
       active: nil,
       disabled: nil,
-      data: nil,
-      accept: nil,
-      readonly: nil,
-      tabindex: nil,
-      accesskey: nil,
-      id: nil,
-      title: nil,
-      style: nil,
-      dir: nil,
-      lang: nil,
-      onclick: nil,
-      ondblclick: nil,
-      onmousedown: nil,
-      onmouseup: nil,
-      onmouseover: nil,
-      onmousemove: nil,
-      onmouseout: nil,
-      onkeypress: nil,
-      onkeydown: nil,
-      onkeyup: nil,
-      onfocus: nil,
-      onblur: nil
+      **options
     )
       @override_classes = override_classes
       @append_classes = append_classes
@@ -67,28 +46,7 @@ module DaisyUi
       @circle = circle
       @active = active
       @disabled = disabled
-      @data = data
-      @accept = accept
-      @readonly = readonly
-      @tabindex = tabindex
-      @accesskey = accesskey
-      @id = id
-      @title = title
-      @style = style
-      @dir = dir
-      @lang = lang
-      @onclick = onclick
-      @ondblclick = ondblclick
-      @onmousedown = onmousedown
-      @onmouseup = onmouseup
-      @onmouseover = onmouseover
-      @onmousemove = onmousemove
-      @onmouseout = onmouseout
-      @onkeypress = onkeypress
-      @onkeydown = onkeydown
-      @onkeyup = onkeyup
-      @onfocus = onfocus
-      @onblur = onblur
+      @options = options
 
       super
     end
@@ -109,65 +67,23 @@ module DaisyUi
                 :circle,
                 :active,
                 :disabled,
-                :data,
-                :accept,
-                :readonly,
-                :tabindex,
-                :accesskey,
-                :id,
-                :title,
-                :style,
-                :dir,
-                :lang,
-                :onclick,
-                :ondblclick,
-                :onmousedown,
-                :onmouseup,
-                :onmouseover,
-                :onmousemove,
-                :onmouseout,
-                :onkeypress,
-                :onkeydown,
-                :onkeyup,
-                :onfocus,
-                :onblur
+                :options
+
+    def args
+      return @_args if @_args
+
+      values = button_options.stringify_keys.merge(options.stringify_keys)
+      @_args = values
+    end
 
     def button_options
       {
-        data:,
         disabled:,
-        accept:,
-        readonly:,
-        tabindex:,
-        accesskey:,
-        id:,
-        class: button_class,
-        title:,
-        style:,
-        dir:,
-        lang:,
-        onclick:,
-        ondblclick:,
-        onmousedown:,
-        onmouseup:,
-        onmouseover:,
-        onmousemove:,
-        onmouseout:,
-        onkeypress:,
-        onkeydown:,
-        onkeyup:,
-        onfocus:,
-        onblur:
+        class: button_class
       }.compact
     end
 
-    def default_classes
-      self.class::DEFAULT_CLASSES.dup
-    end
-
     def button_class
-      return @_button_class if @_button_class
-
       classes = default_classes
       classes = override_classes if override_classes
       classes << append_classes if append_classes
@@ -175,8 +91,10 @@ module DaisyUi
       classes.concat(modifier_classes) if modifier_classes.present?
       classes.concat(behavior_classes) if behavior_classes.present?
       classes.join(' ')
+    end
 
-      @_button_class = classes
+    def default_classes
+      self.class::DEFAULT_CLASSES.dup
     end
 
     def size_classes
