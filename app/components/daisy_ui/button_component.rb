@@ -72,8 +72,7 @@ module DaisyUi
     def args
       return @_args if @_args
 
-      values = button_options.stringify_keys.merge(options.stringify_keys)
-      @_args = values
+      @_args = button_options.merge(options)
     end
 
     def button_options

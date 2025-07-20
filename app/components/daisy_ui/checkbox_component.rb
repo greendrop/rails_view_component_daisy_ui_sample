@@ -68,7 +68,7 @@ module DaisyUi
         name,
         value,
         checked,
-        checkbox_options.stringify_keys.merge(options.stringify_keys)
+        checkbox_options.merge(options)
       ]
     end
 

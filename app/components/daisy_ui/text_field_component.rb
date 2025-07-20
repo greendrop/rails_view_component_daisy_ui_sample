@@ -70,7 +70,7 @@ module DaisyUi
       @_args = [
         name,
         value,
-        input_options.stringify_keys.merge(options.stringify_keys)
+        input_options.merge(options)
       ]
     end
 
