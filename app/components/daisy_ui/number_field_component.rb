@@ -17,36 +17,13 @@ module DaisyUi
       responsive_medium_size: nil,
       responsive_large_size: nil,
       responsive_extra_large_size: nil,
+      disabled: nil,
       min: nil,
       max: nil,
       step: nil,
-      input_size: nil,
       maxlength: nil,
       placeholder: nil,
-      accept: nil,
-      readonly: nil,
-      disabled: nil,
-      tabindex: nil,
-      accesskey: nil,
-      id: nil,
-      title: nil,
-      style: nil,
-      dir: nil,
-      lang: nil,
-      onclick: nil,
-      ondblclick: nil,
-      onmousedown: nil,
-      onmouseup: nil,
-      onmouseover: nil,
-      onmousemove: nil,
-      onmouseout: nil,
-      onkeypress: nil,
-      onkeydown: nil,
-      onkeyup: nil,
-      onfocus: nil,
-      onblur: nil,
-      onselect: nil,
-      onchange: nil
+      **options
     )
       @min = min
       @max = max
@@ -64,32 +41,9 @@ module DaisyUi
         responsive_large_size:,
         responsive_extra_large_size:,
         disabled:,
-        input_size:,
         maxlength:,
         placeholder:,
-        accept:,
-        readonly:,
-        tabindex:,
-        accesskey:,
-        id:,
-        title:,
-        style:,
-        dir:,
-        lang:,
-        onclick:,
-        ondblclick:,
-        onmousedown:,
-        onmouseup:,
-        onmouseover:,
-        onmousemove:,
-        onmouseout:,
-        onkeypress:,
-        onkeydown:,
-        onkeyup:,
-        onfocus:,
-        onblur:,
-        onselect:,
-        onchange:,
+        **options
       )
     end
 
@@ -98,5 +52,13 @@ module DaisyUi
     attr_reader :min,
                 :max,
                 :step
+
+    def input_options
+      super.merge({
+        min:,
+        max:,
+        step:
+      }.compact)
+    end
   end
 end
