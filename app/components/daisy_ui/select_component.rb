@@ -28,28 +28,7 @@ module DaisyUi
       disabled: nil,
       include_blank: nil,
       prompt: nil,
-      accept: nil,
-      readonly: nil,
-      tabindex: nil,
-      accesskey: nil,
-      id: nil,
-      title: nil,
-      style: nil,
-      dir: nil,
-      lang: nil,
-      onclick: nil,
-      ondblclick: nil,
-      onmousedown: nil,
-      onmouseup: nil,
-      onmouseover: nil,
-      onmousemove: nil,
-      onmouseout: nil,
-      onkeypress: nil,
-      onkeydown: nil,
-      onkeyup: nil,
-      onfocus: nil,
-      onblur: nil,
-      onchange: nil
+      **options
 
     )
       @name = name
@@ -66,29 +45,7 @@ module DaisyUi
       @disabled = disabled
       @include_blank = include_blank
       @prompt = prompt
-      @accept = accept
-      @readonly = readonly
-      @tabindex = tabindex
-      @accesskey = accesskey
-      @id = id
-      @title = title
-      @style = style
-      @dir = dir
-      @lang = lang
-      @onclick = onclick
-      @ondblclick = ondblclick
-      @onmousedown = onmousedown
-      @onmouseup = onmouseup
-      @onmouseover = onmouseover
-      @onmousemove = onmousemove
-      @onmouseout = onmouseout
-      @onkeypress = onkeypress
-      @onkeydown = onkeydown
-      @onkeyup = onkeyup
-      @onfocus = onfocus
-      @onblur = onblur
-      @onselect = nil
-      @onchange = onchange
+      @options = options
 
       super
     end
@@ -109,67 +66,25 @@ module DaisyUi
                 :disabled,
                 :include_blank,
                 :prompt,
-                :accept,
-                :readonly,
-                :tabindex,
-                :accesskey,
-                :id,
-                :title,
-                :style,
-                :dir,
-                :lang,
-                :onclick,
-                :ondblclick,
-                :onmousedown,
-                :onmouseup,
-                :onmouseover,
-                :onmousemove,
-                :onmouseout,
-                :onkeypress,
-                :onkeydown,
-                :onkeyup,
-                :onfocus,
-                :onblur,
-                :onselect,
-                :onchange
+                :options
 
     def args
       return @_args if @_args
 
-      values = [name, option_tag, options]
-
-      @_args = values
+      @_args = [
+        name,
+        option_tag,
+        select_options.merge(options)
+      ]
     end
 
-    def options
+    def select_options
       {
         disabled:,
         multiple:,
         include_blank:,
         prompt:,
-        accept:,
-        readonly:,
-        tabindex:,
-        accesskey:,
-        id:,
-        class: select_class,
-        title:,
-        style:,
-        dir:,
-        lang:,
-        onclick:,
-        ondblclick:,
-        onmousedown:,
-        onmouseup:,
-        onmouseover:,
-        onmousemove:,
-        onmouseout:,
-        onkeypress:,
-        onkeydown:,
-        onkeyup:,
-        onfocus:,
-        onblur:,
-        onchange:
+        class: select_class
       }.compact
     end
 
