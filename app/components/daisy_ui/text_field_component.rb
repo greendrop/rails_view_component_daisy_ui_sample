@@ -25,32 +25,9 @@ module DaisyUi
       responsive_large_size: nil,
       responsive_extra_large_size: nil,
       disabled: nil,
-      input_size: nil,
       maxlength: nil,
       placeholder: nil,
-      accept: nil,
-      readonly: nil,
-      tabindex: nil,
-      accesskey: nil,
-      id: nil,
-      title: nil,
-      style: nil,
-      dir: nil,
-      lang: nil,
-      onclick: nil,
-      ondblclick: nil,
-      onmousedown: nil,
-      onmouseup: nil,
-      onmouseover: nil,
-      onmousemove: nil,
-      onmouseout: nil,
-      onkeypress: nil,
-      onkeydown: nil,
-      onkeyup: nil,
-      onfocus: nil,
-      onblur: nil,
-      onselect: nil,
-      onchange: nil
+      **options
     )
       @name = name
       @value = value
@@ -63,32 +40,9 @@ module DaisyUi
       @responsive_large_size = responsive_large_size
       @responsive_extra_large_size = responsive_extra_large_size
       @disabled = disabled
-      @input_size = input_size
       @maxlength = maxlength
       @placeholder = placeholder
-      @accept = accept
-      @readonly = readonly
-      @tabindex = tabindex
-      @accesskey = accesskey
-      @id = id
-      @title = title
-      @style = style
-      @dir = dir
-      @lang = lang
-      @onclick = onclick
-      @ondblclick = ondblclick
-      @onmousedown = onmousedown
-      @onmouseup = onmouseup
-      @onmouseover = onmouseover
-      @onmousemove = onmousemove
-      @onmouseout = onmouseout
-      @onkeypress = onkeypress
-      @onkeydown = onkeydown
-      @onkeyup = onkeyup
-      @onfocus = onfocus
-      @onblur = onblur
-      @onselect = onselect
-      @onchange = onchange
+      @options = options
 
       super
     end
@@ -106,71 +60,26 @@ module DaisyUi
                 :responsive_large_size,
                 :responsive_extra_large_size,
                 :disabled,
-                :input_size,
                 :maxlength,
                 :placeholder,
-                :accept,
-                :readonly,
-                :tabindex,
-                :accesskey,
-                :id,
-                :title,
-                :style,
-                :dir,
-                :lang,
-                :onclick,
-                :ondblclick,
-                :onmousedown,
-                :onmouseup,
-                :onmouseover,
-                :onmousemove,
-                :onmouseout,
-                :onkeypress,
-                :onkeydown,
-                :onkeyup,
-                :onfocus,
-                :onblur,
-                :onselect,
-                :onchange
+                :options
 
     def args
       return @_args if @_args
 
-      values = [name, value, options]
-
-      @_args = values
+      @_args = [
+        name,
+        value,
+        input_options.stringify_keys.merge(options.stringify_keys)
+      ]
     end
 
-    def options
+    def input_options
       {
         disabled:,
-        size: input_size,
         maxlength:,
         placeholder:,
-        accept:,
-        readonly:,
-        tabindex:,
-        accesskey:,
-        id:,
-        class: input_class,
-        title:,
-        style:,
-        dir:,
-        lang:,
-        onclick:,
-        ondblclick:,
-        onmousedown:,
-        onmouseup:,
-        onmouseover:,
-        onmousemove:,
-        onmouseout:,
-        onkeypress:,
-        onkeydown:,
-        onkeyup:,
-        onfocus:,
-        onblur:,
-        onselect:,
-        onchange:
+        class: input_class
       }.compact
     end
 
