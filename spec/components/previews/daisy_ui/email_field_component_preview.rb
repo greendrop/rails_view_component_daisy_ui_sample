@@ -19,32 +19,8 @@ module DaisyUi
     # @param responsive_large_size select :size_options
     # @param responsive_extra_large_size select :size_options
     # @param disabled toggle
-    # @param input_size text
     # @param maxlength number
     # @param placeholder text
-    # @param accept text
-    # @param readonly toggle
-    # @param tabindex text
-    # @param accesskey text
-    # @param id text
-    # @param title text
-    # @param style text
-    # @param dir text
-    # @param lang text
-    # @param onclick text
-    # @param ondblclick text
-    # @param onmousedown text
-    # @param onmouseup text
-    # @param onmouseover text
-    # @param onmousemove text
-    # @param onmouseout text
-    # @param onkeypress text
-    # @param onkeydown text
-    # @param onkeyup text
-    # @param onfocus text
-    # @param onblur text
-    # @param onselect text
-    # @param onchange text
     def default(
       name: 'field_name',
       value: nil,
@@ -57,32 +33,8 @@ module DaisyUi
       responsive_large_size: nil,
       responsive_extra_large_size: nil,
       disabled: nil,
-      input_size: nil,
       maxlength: nil,
-      placeholder: nil,
-      accept: nil,
-      readonly: nil,
-      tabindex: nil,
-      accesskey: nil,
-      id: nil,
-      title: nil,
-      style: nil,
-      dir: nil,
-      lang: nil,
-      onclick: nil,
-      ondblclick: nil,
-      onmousedown: nil,
-      onmouseup: nil,
-      onmouseover: nil,
-      onmousemove: nil,
-      onmouseout: nil,
-      onkeypress: nil,
-      onkeydown: nil,
-      onkeyup: nil,
-      onfocus: nil,
-      onblur: nil,
-      onselect: nil,
-      onchange: nil
+      placeholder: nil
     )
       render COMPONENT_CLASS.new(
         name:,
@@ -96,32 +48,8 @@ module DaisyUi
         responsive_large_size:,
         responsive_extra_large_size:,
         disabled:,
-        input_size:,
         maxlength:,
-        placeholder:,
-        accept:,
-        readonly:,
-        tabindex:,
-        accesskey:,
-        id:,
-        title:,
-        style:,
-        dir:,
-        lang:,
-        onclick:,
-        ondblclick:,
-        onmousedown:,
-        onmouseup:,
-        onmouseover:,
-        onmousemove:,
-        onmouseout:,
-        onkeypress:,
-        onkeydown:,
-        onkeyup:,
-        onfocus:,
-        onblur:,
-        onselect:,
-        onchange:
+        placeholder:
       )
     end
 
