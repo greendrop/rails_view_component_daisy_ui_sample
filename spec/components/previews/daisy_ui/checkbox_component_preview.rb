@@ -19,28 +19,6 @@ module DaisyUi
     # @param responsive_large_size select :size_options
     # @param responsive_extra_large_size select :size_options
     # @param disabled toggle
-    # @param accept text
-    # @param readonly toggle
-    # @param tabindex text
-    # @param accesskey text
-    # @param id text
-    # @param title text
-    # @param style text
-    # @param dir text
-    # @param lang text
-    # @param onclick text
-    # @param ondblclick text
-    # @param onmousedown text
-    # @param onmouseup text
-    # @param onmouseover text
-    # @param onmousemove text
-    # @param onmouseout text
-    # @param onkeypress text
-    # @param onkeydown text
-    # @param onkeyup text
-    # @param onfocus text
-    # @param onblur text
-    # @param onchange text
     def default(
       name: 'enabled',
       value: '1',
