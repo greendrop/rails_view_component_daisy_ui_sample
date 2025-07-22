@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html data-theme="<%= params.dig(:lookbook, :display, :theme) || "default" %>">
+<html data-theme="<%= params.dig(:lookbook, :display, :theme) || 'default' %>">
 <head>
   <title>Component Preview</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag :app, 'data-turbo-track': 'reload' %>
   <%= vite_client_tag %>
   <%= vite_javascript_tag 'application' %>
 </head>

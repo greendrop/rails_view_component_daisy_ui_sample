@@ -1,0 +1,35 @@
+---
+name: Ruby Lint
+
+on:
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+
+      - name: Setup ruby
+        uses: ruby/setup-ruby@472790540115ce5bd69d399a020189a8c87d641f # v1.247.0
+        with:
+          bundler-cache: true
+
+      - name: Run rubocop
+        run: |
+          bin/rubocop -f github --parallel
+
+      - name: Run erb_lint
+        run: |
+          bin/erb_lint --lint-all
+
+      - name: Run brakeman
+        run: |
+          bin/brakeman --no-pager

@@ -58,7 +58,7 @@ module DaisyUi
         max:,
         step:,
         maxlength:,
-        placeholder:,
+        placeholder:
       )
     end
 
