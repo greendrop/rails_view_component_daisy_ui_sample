@@ -3,7 +3,6 @@
 require 'rails_helper'
 
 RSpec.describe DaisyUi::RadioButtonComponent, type: :component do
-
   describe 'snapshot' do
     let!(:snapshot_prefix) { described_class.name.underscore }
     let(:base_args) { { name: 'enabled' } }
