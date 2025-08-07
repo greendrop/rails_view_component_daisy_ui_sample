@@ -2,10 +2,24 @@
 
 FactoryBot.define do
   factory :article do
-    title { 'MyString' }
-    body { 'MyText' }
-    status { 1 }
-    published_at { '2025-07-30 20:05:24' }
+    sequence(:title) { |n| "Title #{n}" }
+    sequence(:body) { |n| "Body content for article #{n}" }
+    status { %i[draft published].sample }
+    published_at { Time.current }
     article_category { nil }
+
+    trait :with_category do
+      association :article_category, factory: :article_category
+    end
+
+    trait :draft do
+      status { :draft }
+      published_at { nil }
+    end
+
+    trait :published do
+      status { :published }
+      published_at { Time.current }
+    end
   end
 end

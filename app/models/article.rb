@@ -23,4 +23,10 @@
 #
 class Article < ApplicationRecord
   belongs_to :article_category
+
+  enum :status, { draft: 0, published: 1 }
+
+  validates :title, presence: true, length: { maximum: 255 }
+  validates :body, presence: true
+  validates :published_at, presence: true, if: -> { published? }
 end
