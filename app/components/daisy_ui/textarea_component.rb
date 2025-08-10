@@ -48,7 +48,7 @@ module DaisyUi
       @cols = cols
       @options = options
 
-      super
+      super()
     end
 
     private

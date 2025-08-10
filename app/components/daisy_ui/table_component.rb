@@ -42,7 +42,7 @@ module DaisyUi
       @pin_rows = pin_rows
       @pin_cols = pin_cols
 
-      super
+      super()
     end
 
     private

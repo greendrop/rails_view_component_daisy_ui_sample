@@ -19,7 +19,7 @@ module DaisyUi
       @append_classes = append_classes
       @id = id
 
-      super
+      super()
     end
 
     private

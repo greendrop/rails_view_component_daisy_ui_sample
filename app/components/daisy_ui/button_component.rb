@@ -48,7 +48,7 @@ module DaisyUi
       @disabled = disabled
       @options = options
 
-      super
+      super()
     end
 
     private
