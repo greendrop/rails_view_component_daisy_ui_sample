@@ -39,6 +39,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'annotaterb'
   gem 'lookbook'
   gem 'web-console'
 end
