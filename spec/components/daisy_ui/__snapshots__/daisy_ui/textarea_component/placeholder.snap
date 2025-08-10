@@ -1,2 +1,1 @@
-<textarea name="description" id="description" placeholder="Enter your name" class="textarea">
-</textarea>
+<textarea name="description" id="description" placeholder="Enter your name" class="textarea"/>
