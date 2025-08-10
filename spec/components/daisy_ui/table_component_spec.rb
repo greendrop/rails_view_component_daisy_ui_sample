@@ -23,18 +23,22 @@ RSpec.describe DaisyUi::TableComponent, type: :component do
               ),
               render_component_outside_view_context(
                 DaisyUi::TableHeaderComponent.new.with_content(
-                  safe_join(
-                    [
-                      render_component_outside_view_context(
-                        DaisyUi::TableHeadComponent.new.with_content('header 1')
-                      ),
-                      render_component_outside_view_context(
-                        DaisyUi::TableHeadComponent.new.with_content('header 2')
-                      ),
-                      render_component_outside_view_context(
-                        DaisyUi::TableHeadComponent.new.with_content('header 3')
+                  render_component_outside_view_context(
+                    DaisyUi::TableRowComponent.new.with_content(
+                      safe_join(
+                        [
+                          render_component_outside_view_context(
+                            DaisyUi::TableHeadComponent.new.with_content('header 1')
+                          ),
+                          render_component_outside_view_context(
+                            DaisyUi::TableHeadComponent.new.with_content('header 2')
+                          ),
+                          render_component_outside_view_context(
+                            DaisyUi::TableHeadComponent.new.with_content('header 3')
+                          )
+                        ]
                       )
-                    ]
+                    )
                   )
                 )
               ),
@@ -82,18 +86,22 @@ RSpec.describe DaisyUi::TableComponent, type: :component do
               ),
               render_component_outside_view_context(
                 DaisyUi::TableFooterComponent.new.with_content(
-                  safe_join(
-                    [
-                      render_component_outside_view_context(
-                        DaisyUi::TableCellComponent.new.with_content('footer 1')
-                      ),
-                      render_component_outside_view_context(
-                        DaisyUi::TableCellComponent.new.with_content('footer 2')
-                      ),
-                      render_component_outside_view_context(
-                        DaisyUi::TableCellComponent.new.with_content('footer 3')
+                  render_component_outside_view_context(
+                    DaisyUi::TableRowComponent.new.with_content(
+                      safe_join(
+                        [
+                          render_component_outside_view_context(
+                            DaisyUi::TableCellComponent.new.with_content('footer 1')
+                          ),
+                          render_component_outside_view_context(
+                            DaisyUi::TableCellComponent.new.with_content('footer 2')
+                          ),
+                          render_component_outside_view_context(
+                            DaisyUi::TableCellComponent.new.with_content('footer 3')
+                          )
+                        ]
                       )
-                    ]
+                    )
                   )
                 )
               )
@@ -118,18 +126,22 @@ RSpec.describe DaisyUi::TableComponent, type: :component do
               ),
               render_component_outside_view_context(
                 DaisyUi::TableHeaderComponent.new.with_content(
-                  safe_join(
-                    [
-                      render_component_outside_view_context(
-                        DaisyUi::TableHeadComponent.new.with_content('header 1')
-                      ),
-                      render_component_outside_view_context(
-                        DaisyUi::TableHeadComponent.new.with_content('header 2')
-                      ),
-                      render_component_outside_view_context(
-                        DaisyUi::TableHeadComponent.new.with_content('header 3')
+                  render_component_outside_view_context(
+                    DaisyUi::TableRowComponent.new.with_content(
+                      safe_join(
+                        [
+                          render_component_outside_view_context(
+                            DaisyUi::TableHeadComponent.new.with_content('header 1')
+                          ),
+                          render_component_outside_view_context(
+                            DaisyUi::TableHeadComponent.new.with_content('header 2')
+                          ),
+                          render_component_outside_view_context(
+                            DaisyUi::TableHeadComponent.new.with_content('header 3')
+                          )
+                        ]
                       )
-                    ]
+                    )
                   )
                 )
               ),
@@ -177,18 +189,22 @@ RSpec.describe DaisyUi::TableComponent, type: :component do
               ),
               render_component_outside_view_context(
                 DaisyUi::TableFooterComponent.new.with_content(
-                  safe_join(
-                    [
-                      render_component_outside_view_context(
-                        DaisyUi::TableCellComponent.new.with_content('footer 1')
-                      ),
-                      render_component_outside_view_context(
-                        DaisyUi::TableCellComponent.new.with_content('footer 2')
-                      ),
-                      render_component_outside_view_context(
-                        DaisyUi::TableCellComponent.new.with_content('footer 3')
+                  render_component_outside_view_context(
+                    DaisyUi::TableRowComponent.new.with_content(
+                      safe_join(
+                        [
+                          render_component_outside_view_context(
+                            DaisyUi::TableCellComponent.new.with_content('footer 1')
+                          ),
+                          render_component_outside_view_context(
+                            DaisyUi::TableCellComponent.new.with_content('footer 2')
+                          ),
+                          render_component_outside_view_context(
+                            DaisyUi::TableCellComponent.new.with_content('footer 3')
+                          )
+                        ]
                       )
-                    ]
+                    )
                   )
                 )
               )
@@ -218,18 +234,22 @@ RSpec.describe DaisyUi::TableComponent, type: :component do
               ),
               render_component_outside_view_context(
                 DaisyUi::TableHeaderComponent.new.with_content(
-                  safe_join(
-                    [
-                      render_component_outside_view_context(
-                        DaisyUi::TableHeadComponent.new.with_content('header 1')
-                      ),
-                      render_component_outside_view_context(
-                        DaisyUi::TableHeadComponent.new.with_content('header 2')
-                      ),
-                      render_component_outside_view_context(
-                        DaisyUi::TableHeadComponent.new.with_content('header 3')
+                  render_component_outside_view_context(
+                    DaisyUi::TableRowComponent.new.with_content(
+                      safe_join(
+                        [
+                          render_component_outside_view_context(
+                            DaisyUi::TableHeadComponent.new.with_content('header 1')
+                          ),
+                          render_component_outside_view_context(
+                            DaisyUi::TableHeadComponent.new.with_content('header 2')
+                          ),
+                          render_component_outside_view_context(
+                            DaisyUi::TableHeadComponent.new.with_content('header 3')
+                          )
+                        ]
                       )
-                    ]
+                    )
                   )
                 )
               ),
@@ -277,18 +297,22 @@ RSpec.describe DaisyUi::TableComponent, type: :component do
               ),
               render_component_outside_view_context(
                 DaisyUi::TableFooterComponent.new.with_content(
-                  safe_join(
-                    [
-                      render_component_outside_view_context(
-                        DaisyUi::TableCellComponent.new.with_content('footer 1')
-                      ),
-                      render_component_outside_view_context(
-                        DaisyUi::TableCellComponent.new.with_content('footer 2')
-                      ),
-                      render_component_outside_view_context(
-                        DaisyUi::TableCellComponent.new.with_content('footer 3')
+                  render_component_outside_view_context(
+                    DaisyUi::TableRowComponent.new.with_content(
+                      safe_join(
+                        [
+                          render_component_outside_view_context(
+                            DaisyUi::TableCellComponent.new.with_content('footer 1')
+                          ),
+                          render_component_outside_view_context(
+                            DaisyUi::TableCellComponent.new.with_content('footer 2')
+                          ),
+                          render_component_outside_view_context(
+                            DaisyUi::TableCellComponent.new.with_content('footer 3')
+                          )
+                        ]
                       )
-                    ]
+                    )
                   )
                 )
               )
@@ -313,18 +337,22 @@ RSpec.describe DaisyUi::TableComponent, type: :component do
               ),
               render_component_outside_view_context(
                 DaisyUi::TableHeaderComponent.new.with_content(
-                  safe_join(
-                    [
-                      render_component_outside_view_context(
-                        DaisyUi::TableHeadComponent.new.with_content('header 1')
-                      ),
-                      render_component_outside_view_context(
-                        DaisyUi::TableHeadComponent.new.with_content('header 2')
-                      ),
-                      render_component_outside_view_context(
-                        DaisyUi::TableHeadComponent.new.with_content('header 3')
+                  render_component_outside_view_context(
+                    DaisyUi::TableRowComponent.new.with_content(
+                      safe_join(
+                        [
+                          render_component_outside_view_context(
+                            DaisyUi::TableHeadComponent.new.with_content('header 1')
+                          ),
+                          render_component_outside_view_context(
+                            DaisyUi::TableHeadComponent.new.with_content('header 2')
+                          ),
+                          render_component_outside_view_context(
+                            DaisyUi::TableHeadComponent.new.with_content('header 3')
+                          )
+                        ]
                       )
-                    ]
+                    )
                   )
                 )
               ),
@@ -372,18 +400,22 @@ RSpec.describe DaisyUi::TableComponent, type: :component do
               ),
               render_component_outside_view_context(
                 DaisyUi::TableFooterComponent.new.with_content(
-                  safe_join(
-                    [
-                      render_component_outside_view_context(
-                        DaisyUi::TableCellComponent.new.with_content('footer 1')
-                      ),
-                      render_component_outside_view_context(
-                        DaisyUi::TableCellComponent.new.with_content('footer 2')
-                      ),
-                      render_component_outside_view_context(
-                        DaisyUi::TableCellComponent.new.with_content('footer 3')
+                  render_component_outside_view_context(
+                    DaisyUi::TableRowComponent.new.with_content(
+                      safe_join(
+                        [
+                          render_component_outside_view_context(
+                            DaisyUi::TableCellComponent.new.with_content('footer 1')
+                          ),
+                          render_component_outside_view_context(
+                            DaisyUi::TableCellComponent.new.with_content('footer 2')
+                          ),
+                          render_component_outside_view_context(
+                            DaisyUi::TableCellComponent.new.with_content('footer 3')
+                          )
+                        ]
                       )
-                    ]
+                    )
                   )
                 )
               )
@@ -408,18 +440,22 @@ RSpec.describe DaisyUi::TableComponent, type: :component do
               ),
               render_component_outside_view_context(
                 DaisyUi::TableHeaderComponent.new.with_content(
-                  safe_join(
-                    [
-                      render_component_outside_view_context(
-                        DaisyUi::TableHeadComponent.new.with_content('header 1')
-                      ),
-                      render_component_outside_view_context(
-                        DaisyUi::TableHeadComponent.new.with_content('header 2')
-                      ),
-                      render_component_outside_view_context(
-                        DaisyUi::TableHeadComponent.new.with_content('header 3')
+                  render_component_outside_view_context(
+                    DaisyUi::TableRowComponent.new.with_content(
+                      safe_join(
+                        [
+                          render_component_outside_view_context(
+                            DaisyUi::TableHeadComponent.new.with_content('header 1')
+                          ),
+                          render_component_outside_view_context(
+                            DaisyUi::TableHeadComponent.new.with_content('header 2')
+                          ),
+                          render_component_outside_view_context(
+                            DaisyUi::TableHeadComponent.new.with_content('header 3')
+                          )
+                        ]
                       )
-                    ]
+                    )
                   )
                 )
               ),
@@ -467,18 +503,22 @@ RSpec.describe DaisyUi::TableComponent, type: :component do
               ),
               render_component_outside_view_context(
                 DaisyUi::TableFooterComponent.new.with_content(
-                  safe_join(
-                    [
-                      render_component_outside_view_context(
-                        DaisyUi::TableCellComponent.new.with_content('footer 1')
-                      ),
-                      render_component_outside_view_context(
-                        DaisyUi::TableCellComponent.new.with_content('footer 2')
-                      ),
-                      render_component_outside_view_context(
-                        DaisyUi::TableCellComponent.new.with_content('footer 3')
+                  render_component_outside_view_context(
+                    DaisyUi::TableRowComponent.new.with_content(
+                      safe_join(
+                        [
+                          render_component_outside_view_context(
+                            DaisyUi::TableCellComponent.new.with_content('footer 1')
+                          ),
+                          render_component_outside_view_context(
+                            DaisyUi::TableCellComponent.new.with_content('footer 2')
+                          ),
+                          render_component_outside_view_context(
+                            DaisyUi::TableCellComponent.new.with_content('footer 3')
+                          )
+                        ]
                       )
-                    ]
+                    )
                   )
                 )
               )
@@ -503,18 +543,22 @@ RSpec.describe DaisyUi::TableComponent, type: :component do
               ),
               render_component_outside_view_context(
                 DaisyUi::TableHeaderComponent.new.with_content(
-                  safe_join(
-                    [
-                      render_component_outside_view_context(
-                        DaisyUi::TableHeadComponent.new.with_content('header 1')
-                      ),
-                      render_component_outside_view_context(
-                        DaisyUi::TableHeadComponent.new.with_content('header 2')
-                      ),
-                      render_component_outside_view_context(
-                        DaisyUi::TableHeadComponent.new.with_content('header 3')
+                  render_component_outside_view_context(
+                    DaisyUi::TableRowComponent.new.with_content(
+                      safe_join(
+                        [
+                          render_component_outside_view_context(
+                            DaisyUi::TableHeadComponent.new.with_content('header 1')
+                          ),
+                          render_component_outside_view_context(
+                            DaisyUi::TableHeadComponent.new.with_content('header 2')
+                          ),
+                          render_component_outside_view_context(
+                            DaisyUi::TableHeadComponent.new.with_content('header 3')
+                          )
+                        ]
                       )
-                    ]
+                    )
                   )
                 )
               ),
@@ -562,18 +606,22 @@ RSpec.describe DaisyUi::TableComponent, type: :component do
               ),
               render_component_outside_view_context(
                 DaisyUi::TableFooterComponent.new.with_content(
-                  safe_join(
-                    [
-                      render_component_outside_view_context(
-                        DaisyUi::TableCellComponent.new.with_content('footer 1')
-                      ),
-                      render_component_outside_view_context(
-                        DaisyUi::TableCellComponent.new.with_content('footer 2')
-                      ),
-                      render_component_outside_view_context(
-                        DaisyUi::TableCellComponent.new.with_content('footer 3')
+                  render_component_outside_view_context(
+                    DaisyUi::TableRowComponent.new.with_content(
+                      safe_join(
+                        [
+                          render_component_outside_view_context(
+                            DaisyUi::TableCellComponent.new.with_content('footer 1')
+                          ),
+                          render_component_outside_view_context(
+                            DaisyUi::TableCellComponent.new.with_content('footer 2')
+                          ),
+                          render_component_outside_view_context(
+                            DaisyUi::TableCellComponent.new.with_content('footer 3')
+                          )
+                        ]
                       )
-                    ]
+                    )
                   )
                 )
               )

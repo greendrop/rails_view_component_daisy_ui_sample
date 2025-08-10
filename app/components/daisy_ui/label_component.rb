@@ -57,7 +57,7 @@ module DaisyUi
       @onkeydown = onkeydown
       @onkeyup = onkeyup
 
-      super
+      super()
     end
 
     private

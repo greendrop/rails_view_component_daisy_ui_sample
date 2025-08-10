@@ -21,7 +21,7 @@ module DaisyUi
       @id = id
       @data = data
 
-      super
+      super()
     end
 
     private

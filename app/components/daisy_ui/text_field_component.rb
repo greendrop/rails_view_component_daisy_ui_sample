@@ -44,7 +44,7 @@ module DaisyUi
       @placeholder = placeholder
       @options = options
 
-      super
+      super()
     end
 
     private

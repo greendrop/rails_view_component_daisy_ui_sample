@@ -47,7 +47,7 @@ module DaisyUi
       @prompt = prompt
       @options = options
 
-      super
+      super()
     end
 
     private

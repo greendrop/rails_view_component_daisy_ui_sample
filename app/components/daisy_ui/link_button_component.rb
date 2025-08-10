@@ -130,7 +130,7 @@ module DaisyUi
       @onselect = onselect
       @onchange = onchange
 
-      super
+      super()
     end
 
     private
