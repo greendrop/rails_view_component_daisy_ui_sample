@@ -23,7 +23,7 @@ module DaisyUi
         safe_join(
           [
             render_component_outside_view_context(
-              DaisyUi::AlertInfoIconComponent.new
+              DaisyUi::InfoAlertIconComponent.new
             ),
             render_component_outside_view_context(
               DaisyUi::AlertBodyComponent.new.with_content(
@@ -43,7 +43,7 @@ module DaisyUi
         safe_join(
           [
             render_component_outside_view_context(
-              DaisyUi::AlertInfoIconComponent.new
+              DaisyUi::InfoAlertIconComponent.new
             ),
             render_component_outside_view_context(
               DaisyUi::AlertBodyComponent.new.with_content(
@@ -70,7 +70,7 @@ module DaisyUi
         safe_join(
           [
             render_component_outside_view_context(
-              DaisyUi::AlertInfoIconComponent.new
+              DaisyUi::InfoAlertIconComponent.new
             ),
             render_component_outside_view_context(
               DaisyUi::AlertBodyComponent.new.with_content(

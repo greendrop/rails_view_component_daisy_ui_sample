@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module DaisyUi
-  class AlertWarningIconComponent < ViewComponent::Base
+  class WarningAlertIconComponent < ViewComponent::Base
     def call
       render(FontAwesome::CircleExclamationIconComponent.new)
     end

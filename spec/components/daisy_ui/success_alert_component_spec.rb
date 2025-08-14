@@ -17,7 +17,7 @@ RSpec.describe DaisyUi::SuccessAlertComponent, type: :component do
           safe_join(
             [
               render_component_outside_view_context(
-                DaisyUi::AlertSuccessIconComponent.new
+                DaisyUi::SuccessAlertIconComponent.new
               ),
               render_component_outside_view_context(
                 DaisyUi::AlertBodyComponent.new.with_content(
@@ -41,7 +41,7 @@ RSpec.describe DaisyUi::SuccessAlertComponent, type: :component do
           safe_join(
             [
               render_component_outside_view_context(
-                DaisyUi::AlertSuccessIconComponent.new
+                DaisyUi::SuccessAlertIconComponent.new
               ),
               render_component_outside_view_context(
                 DaisyUi::AlertBodyComponent.new.with_content(
@@ -72,7 +72,7 @@ RSpec.describe DaisyUi::SuccessAlertComponent, type: :component do
           safe_join(
             [
               render_component_outside_view_context(
-                DaisyUi::AlertSuccessIconComponent.new
+                DaisyUi::SuccessAlertIconComponent.new
               ),
               render_component_outside_view_context(
                 DaisyUi::AlertBodyComponent.new.with_content(
