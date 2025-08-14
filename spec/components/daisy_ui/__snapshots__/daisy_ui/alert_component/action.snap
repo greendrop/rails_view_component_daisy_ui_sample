@@ -1,0 +1,12 @@
+<div class="alert alert-vertical sm:alert-horizontal">
+  <i class="fa-solid fa-circle-info">
+</i><div>
+  <div>
+  Message
+</div>
+</div><div>
+  <button name="button" type="submit" class="btn btn-sm">
+  Action
+</button>
+</div>
+</div>
