@@ -1,0 +1,8 @@
+<div class="alert alert-success alert-vertical sm:alert-horizontal">
+  <i class="fa-solid fa-circle-check">
+</i><div>
+  <div>
+  Message
+</div>
+</div>
+</div>
