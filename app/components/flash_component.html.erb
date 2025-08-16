@@ -1,0 +1,22 @@
+<% flash_messages.each do |key, message| %>
+  <%
+    component_class = flash_alert_component_class(key)
+    icon_component_class = flash_alert_icon_component_class(key)
+    button_component_class = flash_alert_button_component_class(key)
+  %>
+  <div class="mb-2">
+    <div data-controller="flash">
+      <%= render(component_class.new(data: { flash: { target: 'alert' } })) do %>
+        <%= render(icon_component_class.new) %>
+        <%= render(DaisyUi::AlertBodyComponent.new) do %>
+          <%= sanitize(message) %>
+        <% end %>
+        <%= render(DaisyUi::AlertActionComponent.new) do %>
+          <%= render(button_component_class.new(data: { action: 'click->alert#close' })) do %>
+            <%= render(FontAwesome::CircleXmarkIconComponent.new) %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
