@@ -3,7 +3,6 @@ import tseslint from "typescript-eslint";
 import globals from "globals";
 import eslintConfigPrettier from "eslint-config-prettier";
 
-// export default defineConfig([
 export default tseslint.config([
   {
     files: [
