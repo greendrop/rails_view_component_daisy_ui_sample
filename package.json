@@ -2,12 +2,23 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "vite": "vite",
-    "type-check": "tsc --noEmit"
+    "lint": "eslint app/frontend && prettier --check app/frontend",
+    "lint:fix": "eslint app/frontend --fix && prettier --write app/frontend",
+    "type-check": "tsc --noEmit",
+    "vite": "vite"
   },
   "devDependencies": {
+    "@eslint/js": "^9.33.0",
+    "@types/node": "^24.3.0",
+    "@typescript-eslint/parser": "^8.39.1",
     "daisyui": "^5.0.43",
+    "eslint": "^9.33.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^16.3.0",
+    "jiti": "^2.5.1",
+    "prettier": "^3.6.2",
     "typescript": "^5.9.2",
+    "typescript-eslint": "^8.39.1",
     "vite": "^5.4.19",
     "vite-plugin-rails": "^0.5.0"
   },
