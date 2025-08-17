@@ -7,7 +7,7 @@ export default defineConfig({
       envVars: { RAILS_ENV: 'development' },
       fullReload: {
         additionalPaths: [
-          "app/javascript/**/*",
+          "app/frontend/**/*",
           "app/views/**/*",
           "config/routes.rb",
         ],
