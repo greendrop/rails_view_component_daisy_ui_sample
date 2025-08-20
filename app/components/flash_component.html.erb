@@ -12,7 +12,7 @@
           <%= sanitize(message) %>
         <% end %>
         <%= render(DaisyUi::AlertActionComponent.new) do %>
-          <%= render(button_component_class.new(data: { action: 'click->flash#hide' })) do %>
+          <%= render(button_component_class.new(square: true, data: { action: 'click->flash#hide' })) do %>
             <%= render(FontAwesome::CircleXmarkIconComponent.new) %>
           <% end %>
         <% end %>

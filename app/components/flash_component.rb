@@ -64,11 +64,11 @@ class FlashComponent < ViewComponent::Base
   def flash_alert_button_component_class(flash_message_key)
     case flash_message_key
     when :info
-      DaisyUi::InfoButtonComponent
+      DaisyUi::InfoGhostButtonComponent
     when :error
-      DaisyUi::ErrorButtonComponent
+      DaisyUi::ErrorGhostButtonComponent
     else
-      DaisyUi::ButtonComponent
+      DaisyUi::GhostButtonComponent
     end
   end
 end
