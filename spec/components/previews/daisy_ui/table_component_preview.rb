@@ -9,7 +9,7 @@ module DaisyUi
 
     include ViewComponent::TestExtHelpers
 
-    layout 'component_preview'
+    layout 'daisy_ui/layouts/component_preview'
 
     # @label Default
     # @param size select :size_options

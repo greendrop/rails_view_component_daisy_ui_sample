@@ -5,7 +5,7 @@ module DaisyUi
   class LabelComponentPreview < Lookbook::Preview
     COMPONENT_CLASS = DaisyUi::LabelComponent
 
-    layout 'component_preview'
+    layout 'daisy_ui/layouts/component_preview'
 
     # @label Default
     # @param content text

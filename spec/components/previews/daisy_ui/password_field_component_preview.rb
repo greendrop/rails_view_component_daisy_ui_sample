@@ -5,7 +5,7 @@ module DaisyUi
   class PasswordFieldComponentPreview < Lookbook::Preview
     COMPONENT_CLASS = DaisyUi::PasswordFieldComponent
 
-    layout 'component_preview'
+    layout 'daisy_ui/layouts/component_preview'
 
     # @label Default
     # @param name text
