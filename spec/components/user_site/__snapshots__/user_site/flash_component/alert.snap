@@ -1,0 +1,21 @@
+  <div class="mb-2">
+    <div data-controller="flash">
+      <div class="alert alert-error alert-vertical sm:alert-horizontal" data-flash-target="alert">
+  
+        <i class="fa-solid fa-circle-xmark">
+</i>
+        <div>
+  
+          This is an alert.
+
+</div>        <div>
+  
+          <button name="button" type="submit" class="btn btn-ghost btn-error btn-square" data-action="click-&gt;flash#hide">
+  
+            <i class="fa-solid fa-circle-xmark">
+</i>
+
+</button>
+</div>
+</div>    </div>
+  </div>
