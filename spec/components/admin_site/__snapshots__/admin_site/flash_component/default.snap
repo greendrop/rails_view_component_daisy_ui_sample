@@ -1,0 +1,21 @@
+  <div class="mb-2">
+    <div data-controller="flash">
+      <div class="alert alert-vertical sm:alert-horizontal" data-flash-target="alert">
+  
+        <i class="fa-solid fa-circle-info">
+</i>
+        <div>
+  
+          This is a default message.
+
+</div>        <div>
+  
+          <button name="button" type="submit" class="btn btn-ghost btn-square" data-action="click-&gt;flash#hide">
+  
+            <i class="fa-solid fa-circle-xmark">
+</i>
+
+</button>
+</div>
+</div>    </div>
+  </div>
