@@ -1,1 +1,1 @@
-import '~/stylesheets/component_preview/application.css'
+import '~/stylesheets/daisy_ui/component_preview.css'
