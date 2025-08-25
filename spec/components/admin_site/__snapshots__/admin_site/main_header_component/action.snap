@@ -1,0 +1,11 @@
+<div class="flex mb-4">
+  <div class="flex-auto">
+  <h2 class="text-4xl">
+  Title
+</h2>
+</div><div class="flex-none ml-1">
+  <a class="btn" href="#">
+  Action
+</a>
+</div>
+</div>
