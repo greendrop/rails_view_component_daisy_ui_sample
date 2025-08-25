@@ -1,16 +1,69 @@
-<p style="color: green"><%= notice %></p>
+<%
+  title = t('admin_site.general.model_list_title', model: Article.model_name.human(count: 2))
+%>
 
-<% content_for :title, 'Articles' %>
+<% content_for :title, title %>
 
-<h1>Articles</h1>
-
-<div id="articles">
-  <% @articles.each do |article| %>
-    <%= render article %>
-    <p>
-      <%= link_to 'Show this article', article %>
-    </p>
+<% content_for(:main_header) do %>
+  <%= render(AdminSite::MainHeaderComponent.new) do %>
+    <%= render(AdminSite::MainHeaderTitleComponent.new) do %>
+      <%= render(AdminSite::MainHeaderTitleTextComponent.new) do %>
+        <%= title %>
+      <% end %>
+    <% end %>
+    <%= render(AdminSite::MainHeaderActionComponent.new) do %>
+      <%= render(AdminSite::LinkButtonComponent.new(url: new_admin_site_article_path)) do %>
+        <%= t('admin_site.general.new') %>
+      <% end %>
+    <% end %>
   <% end %>
-</div>
+<% end %>
 
-<%= link_to 'New article', new_article_path %>
+<% if @articles.present? %>
+  <%= render(AdminSite::TableComponent.new) do %>
+    <%= render(AdminSite::TableRowComponent.new) do %>
+      <%= render(AdminSite::TableCellComponent.new) do %>
+        <%= Article.human_attribute_name(:id) %>
+      <% end %>
+      <%= render(AdminSite::TableCellComponent.new) do %>
+        <%= Article.human_attribute_name(:title) %>
+      <% end %>
+      <%= render(AdminSite::TableCellComponent.new) do %>
+        <%= Article.human_attribute_name(:status) %>
+      <% end %>
+      <%= render(AdminSite::TableCellComponent.new) do %>
+        <%= Article.human_attribute_name(:published_at) %>
+      <% end %>
+      <%= render(AdminSite::TableCellComponent.new) do %>
+        <%= Article.human_attribute_name(:created_at) %>
+      <% end %>
+      <%= render(AdminSite::TableCellComponent.new) do %>
+        <%= Article.human_attribute_name(:updated_at) %>
+      <% end %>
+    <% end %>
+    <%= render(DaisyUi::TableBodyComponent.new) do %>
+      <% @articles.each do |article| %>
+        <%= render(AdminSite::TableRowComponent.new) do %>
+          <%= render(AdminSite::TableCellComponent.new) do %>
+            <%= article.id %>
+          <% end %>
+          <%= render(AdminSite::TableCellComponent.new) do %>
+            <%= article.title %>
+          <% end %>
+          <%= render(AdminSite::TableCellComponent.new) do %>
+            <%= article.status %>
+          <% end %>
+          <%= render(AdminSite::TableCellComponent.new) do %>
+            <%= l(article.published_at, format: :admin_site_default) if article.published_at.present? %>
+          <% end %>
+          <%= render(AdminSite::TableCellComponent.new) do %>
+            <%= l(article.created_at, format: :admin_site_default) if article.created_at.present? %>
+          <% end %>
+          <%= render(AdminSite::TableCellComponent.new) do %>
+            <%= l(article.updated_at, format: :admin_site_default) if article.updated_at.present? %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
