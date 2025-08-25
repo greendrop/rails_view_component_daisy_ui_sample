@@ -3,8 +3,8 @@ en:
   activerecord:
     models:
       article:
-       one: Article
-       other: Articles
+        one: Article
+        other: Articles
     attributes:
       article:
         id: ID
