@@ -26,13 +26,13 @@ default: &default
 
 development:
   <<: *default
-  database: rails_view_component_daisy_daisyui_sample_development
+  database: rails_view_component_daisy_ui_sample_development
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
   # When left blank, PostgreSQL will use the default role. This is
   # the same name as the operating system user running Rails.
-  # username: rails_view_component_daisy_daisyui_sample
+  # username: rails_view_component_daisy_ui_sample
 
   # The password associated with the PostgreSQL role (username).
   # password:
@@ -60,7 +60,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: rails_view_component_daisy_daisyui_sample_test
+  database: rails_view_component_daisy_ui_sample_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -85,18 +85,18 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: rails_view_component_daisy_daisyui_sample_production
-    username: rails_view_component_daisy_daisyui_sample
-    password: <%= ENV["RAILS_VIEW_COMPONENT_DAISY_DAISYUI_SAMPLE_DATABASE_PASSWORD"] %>
+    database: rails_view_component_daisy_ui_sample_production
+    username: rails_view_component_daisy_ui_sample
+    password: <%= ENV["RAILS_VIEW_COMPONENT_DAISY_UI_SAMPLE_DATABASE_PASSWORD"] %>
   cache:
     <<: *primary_production
-    database: rails_view_component_daisy_daisyui_sample_production_cache
+    database: rails_view_component_daisy_ui_sample_production_cache
     migrations_paths: db/cache_migrate
   queue:
     <<: *primary_production
-    database: rails_view_component_daisy_daisyui_sample_production_queue
+    database: rails_view_component_daisy_ui_sample_production_queue
     migrations_paths: db/queue_migrate
   cable:
     <<: *primary_production
-    database: rails_view_component_daisy_daisyui_sample_production_cable
+    database: rails_view_component_daisy_ui_sample_production_cable
     migrations_paths: db/cable_migrate

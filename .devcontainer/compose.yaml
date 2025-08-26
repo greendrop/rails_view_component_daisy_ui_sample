@@ -1,5 +1,5 @@
 ---
-name: "rails_view_component_daisy_daisyui_sample"
+name: "rails_view_component_daisy_ui_sample"
 
 services:
   rails-app:
