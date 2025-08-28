@@ -1,0 +1,15 @@
+<dl class="flex flex-wrap md:flex-row">
+  <dt class="w-full md:w-1/4 mb-2">
+  Term 1
+</dt><dd class="w-full md:w-3/4 mb-4">
+  Description 1
+</dd><dt class="w-full md:w-1/4 mb-2">
+  Term 2
+</dt><dd class="w-full md:w-3/4 mb-4">
+  Description 2
+</dd><dt class="w-full md:w-1/4 mb-2">
+  Term 3
+</dt><dd class="w-full md:w-3/4 mb-4">
+  Description 3
+</dd>
+</dl>
