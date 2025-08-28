@@ -2,7 +2,7 @@
 
 module AdminSite
   class DefinitionTermComponent < ViewComponent::Base
-    DEFAULT_CLASSES = ['w-full', 'md:w-1/4', 'mb-2'].freeze
+    DEFAULT_CLASSES = ['w-full', 'md:w-1/4', 'label', 'mb-2'].freeze
 
     erb_template <<~ERB
       <%= tag.dt(**args) do %>
