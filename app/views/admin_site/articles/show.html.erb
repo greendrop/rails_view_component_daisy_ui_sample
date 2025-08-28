@@ -1,10 +1,88 @@
-<p style="color: green"><%= notice %></p>
+<%
+  title = t('admin_site.general.model_show_title', model: Article.model_name.human)
+%>
 
-<%= render @article %>
+<% content_for :title, title %>
 
-<div>
-  <%= link_to 'Edit this article', edit_article_path(@article) %> |
-  <%= link_to 'Back to articles', articles_path %>
+<% content_for(:main_header) do %>
+  <%= render(AdminSite::MainHeaderComponent.new) do %>
+    <%= render(AdminSite::MainHeaderTitleComponent.new) do %>
+      <%= render(AdminSite::MainHeaderTitleTextComponent.new) do %>
+        <%= title %>
+      <% end %>
+    <% end %>
+    <%= render(AdminSite::MainHeaderActionComponent.new) do %>
+      <%= render(AdminSite::LinkButtonComponent.new(url: admin_site_articles_path)) do %>
+        <%= t('admin_site.general.list') %>
+      <% end %>
+      <%= render(AdminSite::LinkButtonComponent.new(url: edit_admin_site_article_path(id: @article.id))) do %>
+        <%= t('admin_site.general.edit') %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
 
-  <%= button_to 'Destroy this article', @article, method: :delete %>
-</div>
+<%= render(AdminSite::DefinitionListComponent.new) do %>
+  <%= render(AdminSite::DefinitionTermComponent.new) do %>
+    <%= render(AdminSite::LabelComponent.new) do %>
+      <%= Article.human_attribute_name(:id) %>
+    <% end %>
+  <% end %>
+  <%= render(AdminSite::DefinitionDescriptionComponent.new) do %>
+    <%= @article.id %>
+  <% end %>
+
+  <%= render(AdminSite::DefinitionTermComponent.new) do %>
+    <%= render(AdminSite::LabelComponent.new) do %>
+      <%= Article.human_attribute_name(:title) %>
+    <% end %>
+  <% end %>
+  <%= render(AdminSite::DefinitionDescriptionComponent.new) do %>
+    <%= @article.title %>
+  <% end %>
+
+  <%= render(AdminSite::DefinitionTermComponent.new) do %>
+    <%= render(AdminSite::LabelComponent.new) do %>
+      <%= Article.human_attribute_name(:body) %>
+    <% end %>
+  <% end %>
+  <%= render(AdminSite::DefinitionDescriptionComponent.new) do %>
+    <%= @article.body %>
+  <% end %>
+
+  <%= render(AdminSite::DefinitionTermComponent.new) do %>
+    <%= render(AdminSite::LabelComponent.new) do %>
+      <%= Article.human_attribute_name(:status) %>
+    <% end %>
+  <% end %>
+  <%= render(AdminSite::DefinitionDescriptionComponent.new) do %>
+    <%= @article.status %>
+  <% end %>
+
+  <%= render(AdminSite::DefinitionTermComponent.new) do %>
+    <%= render(AdminSite::LabelComponent.new) do %>
+      <%= Article.human_attribute_name(:published_at) %>
+    <% end %>
+  <% end %>
+  <%= render(AdminSite::DefinitionDescriptionComponent.new) do %>
+    <%= l(@article.published_at, format: :admin_site_default) if @article.published_at.present? %>
+  <% end %>
+
+  <%= render(AdminSite::DefinitionTermComponent.new) do %>
+    <%= render(AdminSite::LabelComponent.new) do %>
+      <%= Article.human_attribute_name(:created_at) %>
+    <% end %>
+  <% end %>
+  <%= render(AdminSite::DefinitionDescriptionComponent.new) do %>
+    <%= l(@article.created_at, format: :admin_site_default) if @article.created_at.present? %>
+  <% end %>
+
+  <%= render(AdminSite::DefinitionTermComponent.new) do %>
+    <%= render(AdminSite::LabelComponent.new) do %>
+      <%= Article.human_attribute_name(:updated_at) %>
+    <% end %>
+  <% end %>
+  <%= render(AdminSite::DefinitionDescriptionComponent.new) do %>
+    <%= l(@article.updated_at, format: :admin_site_default) if @article.updated_at.present? %>
+  <% end %>
+<% end %>
