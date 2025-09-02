@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 module AdminSite
-  class DefinitionTermComponent < ViewComponent::Base
-    DEFAULT_CLASSES = ['label', 'w-1/4'].freeze
+  class DefinitionListItemComponent < ViewComponent::Base
+    DEFAULT_CLASSES = ['md:flex', 'md:gap-4', 'mb-2'].freeze
 
     erb_template <<~ERB
-      <%= tag.dt(**args) do %>
+      <%= tag.dl(**args) do %>
         <%= content %>
       <% end %>
     ERB
@@ -34,12 +34,12 @@ module AdminSite
     def args
       return @_args if @_args
 
-      @_args = definition_term_options.merge(options)
+      @_args = definition_list_options.merge(options)
     end
 
-    def definition_term_options
+    def definition_list_options
       {
-        class: definition_term_class,
+        class: definition_list_class,
         id:
       }.compact
     end
@@ -48,7 +48,7 @@ module AdminSite
       self.class::DEFAULT_CLASSES.dup
     end
 
-    def definition_term_class
+    def definition_list_class
       classes = default_classes
       classes = override_classes if override_classes
       classes << append_classes if append_classes

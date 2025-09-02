@@ -23,52 +23,66 @@
 <% end %>
 
 <%= render(AdminSite::DefinitionListComponent.new) do %>
-  <%= render(AdminSite::DefinitionTermComponent.new) do %>
-    <%= Article.human_attribute_name(:id) %>
-  <% end %>
-  <%= render(AdminSite::DefinitionDescriptionComponent.new) do %>
-    <%= @article.id %>
-  <% end %>
-
-  <%= render(AdminSite::DefinitionTermComponent.new) do %>
-    <%= Article.human_attribute_name(:title) %>
-  <% end %>
-  <%= render(AdminSite::DefinitionDescriptionComponent.new) do %>
-    <%= @article.title %>
+  <%= render(AdminSite::DefinitionListItemComponent.new) do %>
+    <%= render(AdminSite::DefinitionTermComponent.new) do %>
+      <%= Article.human_attribute_name(:id) %>
+    <% end %>
+    <%= render(AdminSite::DefinitionDescriptionComponent.new) do %>
+      <%= @article.id %>
+    <% end %>
   <% end %>
 
-  <%= render(AdminSite::DefinitionTermComponent.new) do %>
-    <%= Article.human_attribute_name(:body) %>
-  <% end %>
-  <%= render(AdminSite::DefinitionDescriptionComponent.new) do %>
-    <%= @article.body %>
-  <% end %>
-
-  <%= render(AdminSite::DefinitionTermComponent.new) do %>
-    <%= Article.human_attribute_name(:status) %>
-  <% end %>
-  <%= render(AdminSite::DefinitionDescriptionComponent.new) do %>
-    <%= @article.status %>
+  <%= render(AdminSite::DefinitionListItemComponent.new) do %>
+    <%= render(AdminSite::DefinitionTermComponent.new) do %>
+      <%= Article.human_attribute_name(:title) %>
+    <% end %>
+    <%= render(AdminSite::DefinitionDescriptionComponent.new) do %>
+      <%= @article.title %>
+    <% end %>
   <% end %>
 
-  <%= render(AdminSite::DefinitionTermComponent.new) do %>
-    <%= Article.human_attribute_name(:published_at) %>
-  <% end %>
-  <%= render(AdminSite::DefinitionDescriptionComponent.new) do %>
-    <%= l(@article.published_at, format: :admin_site_default) if @article.published_at.present? %>
-  <% end %>
-
-  <%= render(AdminSite::DefinitionTermComponent.new) do %>
-    <%= Article.human_attribute_name(:created_at) %>
-  <% end %>
-  <%= render(AdminSite::DefinitionDescriptionComponent.new) do %>
-    <%= l(@article.created_at, format: :admin_site_default) if @article.created_at.present? %>
+  <%= render(AdminSite::DefinitionListItemComponent.new) do %>
+    <%= render(AdminSite::DefinitionTermComponent.new) do %>
+      <%= Article.human_attribute_name(:body) %>
+    <% end %>
+    <%= render(AdminSite::DefinitionDescriptionComponent.new) do %>
+      <%= @article.body %>
+    <% end %>
   <% end %>
 
-  <%= render(AdminSite::DefinitionTermComponent.new) do %>
-    <%= Article.human_attribute_name(:updated_at) %>
+  <%= render(AdminSite::DefinitionListItemComponent.new) do %>
+    <%= render(AdminSite::DefinitionTermComponent.new) do %>
+      <%= Article.human_attribute_name(:status) %>
+    <% end %>
+    <%= render(AdminSite::DefinitionDescriptionComponent.new) do %>
+      <%= @article.status %>
+    <% end %>
   <% end %>
-  <%= render(AdminSite::DefinitionDescriptionComponent.new) do %>
-    <%= l(@article.updated_at, format: :admin_site_default) if @article.updated_at.present? %>
+
+  <%= render(AdminSite::DefinitionListItemComponent.new) do %>
+    <%= render(AdminSite::DefinitionTermComponent.new) do %>
+      <%= Article.human_attribute_name(:published_at) %>
+    <% end %>
+    <%= render(AdminSite::DefinitionDescriptionComponent.new) do %>
+      <%= l(@article.published_at, format: :admin_site_default) if @article.published_at.present? %>
+    <% end %>
+  <% end %>
+
+  <%= render(AdminSite::DefinitionListItemComponent.new) do %>
+    <%= render(AdminSite::DefinitionTermComponent.new) do %>
+      <%= Article.human_attribute_name(:created_at) %>
+    <% end %>
+    <%= render(AdminSite::DefinitionDescriptionComponent.new) do %>
+      <%= l(@article.created_at, format: :admin_site_default) if @article.created_at.present? %>
+    <% end %>
+  <% end %>
+
+  <%= render(AdminSite::DefinitionListItemComponent.new) do %>
+    <%= render(AdminSite::DefinitionTermComponent.new) do %>
+      <%= Article.human_attribute_name(:updated_at) %>
+    <% end %>
+    <%= render(AdminSite::DefinitionDescriptionComponent.new) do %>
+      <%= l(@article.updated_at, format: :admin_site_default) if @article.updated_at.present? %>
+    <% end %>
   <% end %>
 <% end %>

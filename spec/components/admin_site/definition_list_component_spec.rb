@@ -19,22 +19,49 @@ RSpec.describe AdminSite::DefinitionListComponent, type: :component do
           safe_join(
             [
               render_component_outside_view_context(
-                AdminSite::DefinitionTermComponent.new.with_content('Term 1')
+                AdminSite::DefinitionListItemComponent.new.with_content(
+                  safe_join(
+                    [
+
+                      render_component_outside_view_context(
+                        AdminSite::DefinitionTermComponent.new.with_content('Term 1')
+                      ),
+                      render_component_outside_view_context(
+                        AdminSite::DefinitionDescriptionComponent.new.with_content('Description 1')
+                      )
+                    ]
+                  )
+                )
               ),
               render_component_outside_view_context(
-                AdminSite::DefinitionDescriptionComponent.new.with_content('Description 1')
+                AdminSite::DefinitionListItemComponent.new.with_content(
+                  safe_join(
+                    [
+
+                      render_component_outside_view_context(
+                        AdminSite::DefinitionTermComponent.new.with_content('Term 2')
+                      ),
+                      render_component_outside_view_context(
+                        AdminSite::DefinitionDescriptionComponent.new.with_content('Description 2')
+                      )
+                    ]
+                  )
+                )
               ),
               render_component_outside_view_context(
-                AdminSite::DefinitionTermComponent.new.with_content('Term 2')
-              ),
-              render_component_outside_view_context(
-                AdminSite::DefinitionDescriptionComponent.new.with_content('Description 2')
-              ),
-              render_component_outside_view_context(
-                AdminSite::DefinitionTermComponent.new.with_content('Term 3')
-              ),
-              render_component_outside_view_context(
-                AdminSite::DefinitionDescriptionComponent.new.with_content('Description 3')
+                AdminSite::DefinitionListItemComponent.new.with_content(
+                  safe_join(
+                    [
+
+                      render_component_outside_view_context(
+                        AdminSite::DefinitionTermComponent.new.with_content('Term 3')
+                      ),
+                      render_component_outside_view_context(
+                        AdminSite::DefinitionDescriptionComponent.new.with_content('Description 3')
+                      )
+                    ]
+                  )
+                )
               )
             ]
           )

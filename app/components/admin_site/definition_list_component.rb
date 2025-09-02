@@ -2,7 +2,7 @@
 
 module AdminSite
   class DefinitionListComponent < ViewComponent::Base
-    DEFAULT_CLASSES = ['flex', 'flex-wrap', 'md:flex-row'].freeze
+    DEFAULT_CLASSES = [].freeze
 
     erb_template <<~ERB
       <%= tag.dl(**args) do %>
