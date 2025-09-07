@@ -8,6 +8,8 @@ gem 'bootsnap', require: false
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'kamal', require: false
+gem 'kaminari'
+gem 'kaminari-i18n'
 gem 'pg', '~> 1.6'
 gem 'propshaft'
 gem 'puma', '>= 5.0'
