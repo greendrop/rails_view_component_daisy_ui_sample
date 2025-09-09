@@ -24,52 +24,54 @@
 </div>
 
 <% if @articles.present? %>
-  <%= render(AdminSite::TableComponent.new) do %>
-    <%= render(AdminSite::TableRowComponent.new) do %>
-      <%= render(AdminSite::TableCellComponent.new) do %>
-        <%= Article.human_attribute_name(:id) %>
+  <div class="mb-4">
+    <%= render(AdminSite::TableComponent.new(append_classes: ['mb-4'])) do %>
+      <%= render(AdminSite::TableRowComponent.new) do %>
+        <%= render(AdminSite::TableCellComponent.new) do %>
+          <%= Article.human_attribute_name(:id) %>
+        <% end %>
+        <%= render(AdminSite::TableCellComponent.new) do %>
+          <%= Article.human_attribute_name(:title) %>
+        <% end %>
+        <%= render(AdminSite::TableCellComponent.new) do %>
+          <%= Article.human_attribute_name(:status) %>
+        <% end %>
+        <%= render(AdminSite::TableCellComponent.new) do %>
+          <%= Article.human_attribute_name(:published_at) %>
+        <% end %>
+        <%= render(AdminSite::TableCellComponent.new) do %>
+          <%= Article.human_attribute_name(:created_at) %>
+        <% end %>
+        <%= render(AdminSite::TableCellComponent.new) do %>
+          <%= Article.human_attribute_name(:updated_at) %>
+        <% end %>
       <% end %>
-      <%= render(AdminSite::TableCellComponent.new) do %>
-        <%= Article.human_attribute_name(:title) %>
-      <% end %>
-      <%= render(AdminSite::TableCellComponent.new) do %>
-        <%= Article.human_attribute_name(:status) %>
-      <% end %>
-      <%= render(AdminSite::TableCellComponent.new) do %>
-        <%= Article.human_attribute_name(:published_at) %>
-      <% end %>
-      <%= render(AdminSite::TableCellComponent.new) do %>
-        <%= Article.human_attribute_name(:created_at) %>
-      <% end %>
-      <%= render(AdminSite::TableCellComponent.new) do %>
-        <%= Article.human_attribute_name(:updated_at) %>
-      <% end %>
-    <% end %>
-    <%= render(DaisyUi::TableBodyComponent.new) do %>
-      <% @articles.each do |article| %>
-        <%= render(AdminSite::TableRowComponent.new) do %>
-          <%= render(AdminSite::TableCellComponent.new) do %>
-            <%= article.id %>
-          <% end %>
-          <%= render(AdminSite::TableCellComponent.new) do %>
-            <%= article.title %>
-          <% end %>
-          <%= render(AdminSite::TableCellComponent.new) do %>
-            <%= article.status %>
-          <% end %>
-          <%= render(AdminSite::TableCellComponent.new) do %>
-            <%= l(article.published_at, format: :admin_site_default) if article.published_at.present? %>
-          <% end %>
-          <%= render(AdminSite::TableCellComponent.new) do %>
-            <%= l(article.created_at, format: :admin_site_default) if article.created_at.present? %>
-          <% end %>
-          <%= render(AdminSite::TableCellComponent.new) do %>
-            <%= l(article.updated_at, format: :admin_site_default) if article.updated_at.present? %>
+      <%= render(DaisyUi::TableBodyComponent.new) do %>
+        <% @articles.each do |article| %>
+          <%= render(AdminSite::TableRowComponent.new) do %>
+            <%= render(AdminSite::TableCellComponent.new) do %>
+              <%= article.id %>
+            <% end %>
+            <%= render(AdminSite::TableCellComponent.new) do %>
+              <%= article.title %>
+            <% end %>
+            <%= render(AdminSite::TableCellComponent.new) do %>
+              <%= article.status %>
+            <% end %>
+            <%= render(AdminSite::TableCellComponent.new) do %>
+              <%= l(article.published_at, format: :admin_site_default) if article.published_at.present? %>
+            <% end %>
+            <%= render(AdminSite::TableCellComponent.new) do %>
+              <%= l(article.created_at, format: :admin_site_default) if article.created_at.present? %>
+            <% end %>
+            <%= render(AdminSite::TableCellComponent.new) do %>
+              <%= l(article.updated_at, format: :admin_site_default) if article.updated_at.present? %>
+            <% end %>
           <% end %>
         <% end %>
       <% end %>
     <% end %>
-  <% end %>
+  </div>
 
   <div class="mb-4 flex items-center justify-center">
     <%= paginate @articles, views_prefix: :admin_site %>

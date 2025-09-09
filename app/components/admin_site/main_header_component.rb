@@ -2,7 +2,7 @@
 
 module AdminSite
   class MainHeaderComponent < ViewComponent::Base
-    DEFAULT_CLASSES = %w[flex mb-4].freeze
+    DEFAULT_CLASSES = %w[flex].freeze
 
     erb_template <<~ERB
       <%= tag.div(**args) do %>
