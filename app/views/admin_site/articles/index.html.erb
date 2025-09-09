@@ -45,6 +45,7 @@
         <%= render(AdminSite::TableCellComponent.new) do %>
           <%= Article.human_attribute_name(:updated_at) %>
         <% end %>
+        <%= render(AdminSite::TableCellComponent.new) %>
       <% end %>
       <%= render(DaisyUi::TableBodyComponent.new) do %>
         <% @articles.each do |article| %>
@@ -66,6 +67,11 @@
             <% end %>
             <%= render(AdminSite::TableCellComponent.new) do %>
               <%= l(article.updated_at, format: :admin_site_default) if article.updated_at.present? %>
+            <% end %>
+            <%= render(AdminSite::TableCellComponent.new) do %>
+              <%= render(AdminSite::LinkButtonComponent.new(url: admin_site_article_path(id: article.id))) do %>
+                <%= t('admin_site.general.show') %>
+              <% end %>
             <% end %>
           <% end %>
         <% end %>
