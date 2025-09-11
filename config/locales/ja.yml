@@ -24,3 +24,4 @@ ja:
       model_created_message: '%{model}が作成されました。'
       model_updated_message: '%{model}が更新されました。'
       model_destroyed_message: '%{model}が削除されました。'
+      model_destroy_are_you_sure: 'この%{model}を削除してもよろしいですか？'

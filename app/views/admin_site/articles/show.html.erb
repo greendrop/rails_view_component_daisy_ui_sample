@@ -18,6 +18,9 @@
       <%= render(AdminSite::LinkButtonComponent.new(url: edit_admin_site_article_path(id: @article.id))) do %>
         <%= t('admin_site.general.edit') %>
       <% end %>
+      <%= render(AdminSite::ErrorLinkButtonComponent.new(url: admin_site_article_path(id: @article.id), data: { turbo_method: :delete, turbo_confirm: t('admin_site.general.model_destroy_are_you_sure', model: Article.model_name.human) })) do %>
+        <%= t('admin_site.general.destroy') %>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>
