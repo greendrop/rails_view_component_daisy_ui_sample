@@ -79,7 +79,7 @@ module DaisyUi
       return @_args if @_args
 
       values = [url]
-      values << component_options if component_options.present?
+      values << component_options.merge(options)
 
       @_args = values
     end
