@@ -10,8 +10,10 @@ module DaisyUi
 
     # @label Default
     # @param content text
+    # @param url text
     # @param override_classes text
     # @param append_classes text
+    # @param id text
     # @param size select :size_options
     # @param responsive_extra_small_size select :size_options
     # @param responsive_small_size select :size_options
@@ -26,8 +28,10 @@ module DaisyUi
     # @param disabled toggle
     def default(
       content: 'Content',
+      url: '#',
       override_classes: nil,
       append_classes: nil,
+      id: nil,
       size: nil,
       responsive_extra_small_size: nil,
       responsive_small_size: nil,
@@ -42,8 +46,10 @@ module DaisyUi
       disabled: nil
     )
       render COMPONENT_CLASS.new(
+        url:,
         override_classes: override_classes ? [override_classes] : nil,
         append_classes: append_classes ? [append_classes] : nil,
+        id:,
         size:,
         responsive_extra_small_size:,
         responsive_small_size:,
@@ -62,17 +68,13 @@ module DaisyUi
     # @!group Behaviors
 
     # @label Active
-    def behavior_active(content: 'Active')
-      render COMPONENT_CLASS.new(
-        active: true
-      ).with_content(content)
+    def behavior_active
+      default(active: true, content: 'Active', url: '#')
     end
 
     # @label Disabled
-    def behavior_disabled(content: 'Disabled')
-      render COMPONENT_CLASS.new(
-        disabled: true
-      ).with_content(content)
+    def behavior_disabled
+      default(disabled: true, content: 'Disabled', url: '#')
     end
 
     # @!endgroup
@@ -80,38 +82,28 @@ module DaisyUi
     # @!group Sizes
 
     # @label Extra Small
-    def size_extra_small(content: 'Extra Small')
-      render COMPONENT_CLASS.new(
-        size: COMPONENT_CLASS::SIZE_EXTRA_SMALL
-      ).with_content(content)
+    def size_extra_small
+      default(size: COMPONENT_CLASS::SIZE_EXTRA_SMALL, content: 'Extra Small', url: '#')
     end
 
     # @label Small
-    def size_small(content: 'Small')
-      render COMPONENT_CLASS.new(
-        size: COMPONENT_CLASS::SIZE_SMALL
-      ).with_content(content)
+    def size_small
+      default(size: COMPONENT_CLASS::SIZE_SMALL, content: 'Small', url: '#')
     end
 
     # @label Medium
-    def size_medium(content: 'Medium')
-      render COMPONENT_CLASS.new(
-        size: COMPONENT_CLASS::SIZE_MEDIUM
-      ).with_content(content)
+    def size_medium
+      default(size: COMPONENT_CLASS::SIZE_MEDIUM, content: 'Medium', url: '#')
     end
 
     # @label Large
-    def size_large(content: 'Large')
-      render COMPONENT_CLASS.new(
-        size: COMPONENT_CLASS::SIZE_LARGE
-      ).with_content(content)
+    def size_large
+      default(size: COMPONENT_CLASS::SIZE_LARGE, content: 'Large', url: '#')
     end
 
     # @label Extra Large
-    def size_extra_large(content: 'Extra Large')
-      render COMPONENT_CLASS.new(
-        size: COMPONENT_CLASS::SIZE_EXTRA_LARGE
-      ).with_content(content)
+    def size_extra_large
+      default(size: COMPONENT_CLASS::SIZE_EXTRA_LARGE, content: 'Extra Large', url: '#')
     end
 
     # @!endgroup
@@ -119,35 +111,23 @@ module DaisyUi
     # @!group Modifiers
 
     # @label Wide
-    def modifier_wide(content: 'Wide')
-      render COMPONENT_CLASS.new(
-        wide: true
-      ).with_content(content)
+    def modifier_wide
+      default(wide: true, content: 'Wide', url: '#')
     end
 
     # @label Block
-    def modifier_block(content: 'Block')
-      render COMPONENT_CLASS.new(
-        block: true
-      ).with_content(content)
+    def modifier_block
+      default(block: true, content: 'Block', url: '#')
     end
 
     # @label Square
-    def modifier_square(
-      content: SVG_ICON.html_safe # rubocop:disable Rails/OutputSafety
-    )
-      render COMPONENT_CLASS.new(
-        square: true
-      ).with_content(content)
+    def modifier_square
+      default(square: true, content: SVG_ICON.html_safe, url: '#') # rubocop:disable Rails/OutputSafety
     end
 
     # @label Circle
-    def modifier_circle(
-      content: SVG_ICON.html_safe # rubocop:disable Rails/OutputSafety
-    )
-      render COMPONENT_CLASS.new(
-        circle: true
-      ).with_content(content)
+    def modifier_circle
+      default(circle: true, content: SVG_ICON.html_safe, url: '#') # rubocop:disable Rails/OutputSafety
     end
 
     # @!endgroup
