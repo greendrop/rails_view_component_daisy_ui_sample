@@ -20,7 +20,8 @@ module AdminSite
       @article = Article.new(article_params)
 
       if @article.save
-        redirect_to @article, notice: 'Article was successfully created.'
+        notice = t('admin_site.general.model_created_message', model: Article.model_name.human)
+        redirect_to admin_site_article_path(id: @article.id), notice:
       else
         render :new, status: :unprocessable_entity
       end
@@ -28,7 +29,8 @@ module AdminSite
 
     def update
       if @article.update(article_params)
-        redirect_to @article, notice: 'Article was successfully updated.'
+        notice = t('admin_site.general.model_updated_message', model: Article.model_name.human)
+        redirect_to @article, notice:
       else
         render :edit, status: :unprocessable_entity
       end
@@ -37,7 +39,8 @@ module AdminSite
     def destroy
       @article.destroy!
 
-      redirect_to articles_path, status: :see_other, notice: 'Article was successfully destroyed.'
+      notice = t('admin_site.general.model_destroyed_message', model: Article.model_name.human)
+      redirect_to articles_path, status: :see_other, notice:
     end
 
     private
