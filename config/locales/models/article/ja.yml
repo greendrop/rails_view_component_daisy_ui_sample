@@ -12,3 +12,9 @@ ja:
         body: 本文
         status: ステータス
         published_at: 公開日時
+  enums:
+    article:
+      status:
+        draft: 下書き
+        published: 公開
+
