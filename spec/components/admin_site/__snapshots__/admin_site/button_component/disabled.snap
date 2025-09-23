@@ -1,0 +1,3 @@
+<button name="button" type="submit" disabled="disabled" class="btn btn-disabled">
+  Disabled
+</button>
