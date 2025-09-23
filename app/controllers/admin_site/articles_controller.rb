@@ -30,7 +30,7 @@ module AdminSite
     def update
       if @article.update(article_params)
         notice = t('admin_site.general.model_updated_message', model: Article.model_name.human)
-        redirect_to @article, notice:
+        redirect_to admin_site_article_path(id: @article.id), notice:
       else
         render :edit, status: :unprocessable_entity
       end
