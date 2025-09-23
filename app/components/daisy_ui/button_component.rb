@@ -24,6 +24,7 @@ module DaisyUi
       responsive_medium_size: nil,
       responsive_large_size: nil,
       responsive_extra_large_size: nil,
+      type: nil,
       wide: false,
       block: false,
       square: false,
@@ -40,6 +41,7 @@ module DaisyUi
       @responsive_medium_size = responsive_medium_size
       @responsive_large_size = responsive_large_size
       @responsive_extra_large_size = responsive_extra_large_size
+      @type = type
       @wide = wide
       @block = block
       @square = square
@@ -61,6 +63,7 @@ module DaisyUi
                 :responsive_medium_size,
                 :responsive_large_size,
                 :responsive_extra_large_size,
+                :type,
                 :wide,
                 :block,
                 :square,
@@ -77,6 +80,7 @@ module DaisyUi
 
     def button_options
       {
+        type:,
         disabled:,
         class: button_class
       }.compact
