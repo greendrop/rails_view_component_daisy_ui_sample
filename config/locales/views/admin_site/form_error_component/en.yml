@@ -1,0 +1,5 @@
+---
+en:
+  admin_site:
+    form_error_component:
+      invalid_message: 'There are errors in the input.'
