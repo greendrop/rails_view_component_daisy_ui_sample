@@ -11,12 +11,19 @@ module AdminSite
           options = options.dup
         end
 
-        @template.render(
-          AdminSite::LabelComponent.new(
-            for: "#{object_name}_#{method}",
-            **options
-          )
-        ) do
+        options = {
+          for: "#{object_name}_#{method}",
+          error_options: { show: false }
+        }.deep_merge(options)
+
+        error_options = options.delete(:error_options)
+        errored = error_options[:show] && object.errors.include?(method)
+
+        options[:override_classes] = [options[:class]] if options.key?(:class)
+
+        label_component_class = errored ? AdminSite::ErrorLabelComponent : AdminSite::LabelComponent
+
+        @template.render(label_component_class.new(**options)) do
           text || object.class.human_attribute_name(method)
         end
       end
