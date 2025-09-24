@@ -1,11 +1,26 @@
-<% content_for :title, 'New article' %>
+<%
+  title = t('admin_site.general.model_new_title', model: Article.model_name.human)
+%>
 
-<h1>New article</h1>
+<% content_for :title, title %>
 
-<%= render 'form', article: @article %>
+<% content_for(:main_header) do %>
+  <%= render(AdminSite::MainHeaderComponent.new) do %>
+    <%= render(AdminSite::MainHeaderTitleComponent.new) do %>
+      <%= render(AdminSite::MainHeaderTitleTextComponent.new) do %>
+        <%= title %>
+      <% end %>
+    <% end %>
+    <%= render(AdminSite::MainHeaderActionComponent.new) do %>
+      <%= render(AdminSite::LinkButtonComponent.new(url: admin_site_articles_path)) do %>
+        <%= t('admin_site.general.list') %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
 
-<br>
+<%= form_with(model: @article, url: admin_site_articles_path, builder: AdminSite::FormBuilder) do |form| %>
+  <%= render 'form', form: %>
 
-<div>
-  <%= link_to 'Back to articles', articles_path %>
-</div>
+  <%= form.full_width_primary_submit t('admin_site.general.create') %>
+<% end %>
