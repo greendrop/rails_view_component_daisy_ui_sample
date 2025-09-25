@@ -1,0 +1,1 @@
+<input type="datetime-local" name="published_at" id="published_at" class="input input-xs xs:input-xs sm:input-sm md:input-md lg:input-lg xl:input-xl"/>

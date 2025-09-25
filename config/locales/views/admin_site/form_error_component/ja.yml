@@ -1,0 +1,5 @@
+---
+ja:
+  admin_site:
+    form_error_component:
+      invalid_message: '入力内容に誤りがあります。'

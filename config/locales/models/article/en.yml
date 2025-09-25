@@ -14,3 +14,8 @@ en:
         body: Body
         status: Status
         published_at: Published At
+  enums:
+    article:
+      status:
+        draft: Draft
+        published: Published

@@ -1,0 +1,17 @@
+<%= render(AdminSite::ErrorAlertComponent.new) do %>
+  <%= render(AdminSite::ErrorAlertIconComponent.new) %>
+  <%= render(AdminSite::AlertBodyComponent.new) do %>
+    <%= render(AdminSite::AlertTitleComponent.new) do %>
+      <%= t('.invalid_message') %>
+    <% end %>
+    <% if messages.any? %>
+      <%= render(AdminSite::AlertDescriptionComponent.new) do %>
+        <ul class="list-disc list-inside mt-2">
+          <% messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

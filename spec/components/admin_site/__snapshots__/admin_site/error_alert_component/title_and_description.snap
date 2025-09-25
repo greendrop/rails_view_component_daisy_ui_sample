@@ -1,0 +1,10 @@
+<div class="alert alert-error alert-vertical sm:alert-horizontal">
+  <i class="fa-solid fa-circle-xmark">
+</i><div>
+  <div class="font-bold">
+  Title
+</div><div class="text-xs">
+  Description
+</div>
+</div>
+</div>

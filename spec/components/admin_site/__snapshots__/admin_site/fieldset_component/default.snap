@@ -1,0 +1,10 @@
+<fieldset class="fieldset">
+  <legend class="fieldset">
+  legend
+</legend><label class="label">
+  label
+</label><input type="text" name="input_name" id="input_name" class="input"/>
+<p class="label">
+  hint
+</p>
+</fieldset>
