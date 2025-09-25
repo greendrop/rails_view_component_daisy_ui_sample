@@ -2,7 +2,7 @@
   <%= render(AdminSite::ErrorAlertIconComponent.new) %>
   <%= render(AdminSite::AlertBodyComponent.new) do %>
     <%= render(AdminSite::AlertTitleComponent.new) do %>
-      <%= t(".invalid_message") %>
+      <%= t('.invalid_message') %>
     <% end %>
     <% if messages.any? %>
       <%= render(AdminSite::AlertDescriptionComponent.new) do %>
