@@ -2,10 +2,14 @@
 
 <% if form.object.errors.any? %>
   <div class="mb-4">
-    <%= render(AdminSite::FormErrorComponent.new(
-      errors: form.object.errors,
-      except_attributes: [:title, :body, :status, :published_at, :article_category_id]
-    )) %>
+    <%=
+      render(
+        AdminSite::FormErrorComponent.new(
+          errors: form.object.errors,
+          except_attributes: %i[title body status published_at article_category_id]
+        )
+      )
+    %>
   </div>
 <% end %>
 
