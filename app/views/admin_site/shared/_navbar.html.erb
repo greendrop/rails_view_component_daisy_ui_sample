@@ -1,0 +1,14 @@
+<%# locals: (show_drawer_icon:)  %>
+<div class="w-full navbar bg-base-300">
+  <% if show_drawer_icon %>
+    <div class="flex-none lg:hidden">
+      <label class="btn btn-square btn-ghost" for="navbar-drawer">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+    </div>
+  <% end %>
+
+  <div class="flex-1 px-2 mx-2">
+    <%= link_to 'Admin', admin_site_root_path, class: 'btn btn-ghost normal-case text-xl' %>
+  </div>
+</div>
