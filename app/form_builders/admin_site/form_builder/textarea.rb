@@ -17,7 +17,8 @@ module AdminSite
 
         options[:override_classes] = [options[:class]] if options.key?(:class)
 
-        input_content = @template.render(AdminSite::TextareaComponent.new(**options))
+        input_component_class = errored ? AdminSite::ErrorTextareaComponent : AdminSite::TextareaComponent
+        input_content = @template.render(input_component_class.new(**options))
 
         return input_content unless errored
 
@@ -39,10 +40,12 @@ module AdminSite
 
       def labeled_textarea(method, options = {})
         options = {
-          label_options: {}
+          label_options: {},
+          error_options: { show: false }
         }.deep_merge(options)
 
         label_options = options.delete(:label_options)
+        label_options[:error_options] = options[:error_options]
 
         label_content = label(method, nil, label_options)
         input_content = textarea(method, options)
@@ -52,10 +55,12 @@ module AdminSite
 
       def labeled_full_width_textarea(method, options = {})
         options = {
-          label_options: {}
+          label_options: {},
+          error_options: { show: false }
         }.deep_merge(options)
 
         label_options = options.delete(:label_options)
+        label_options[:error_options] = options[:error_options]
 
         label_content = label(method, nil, label_options)
         input_content = full_width_textarea(method, options)
