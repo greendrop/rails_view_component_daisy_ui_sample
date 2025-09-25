@@ -7,7 +7,7 @@ module AdminSite
 
       FULL_WIDTH_CLASS = 'w-full'
 
-      def select(method, choices = nil, options = {}, html_options = {}, &)
+      def select(method, choices = nil, options = {}, html_options = {}, &) # rubocop:disable Metrics/PerceivedComplexity
         option_tag =
           if choices.is_a?(Array) || choices.is_a?(Hash)
             options_for_select(choices, object.public_send(method))
@@ -25,7 +25,8 @@ module AdminSite
 
         options[:override_classes] = [options[:class]] if options.key?(:class)
 
-        select_content = @template.render(AdminSite::SelectComponent.new(**options))
+        select_component_class = errored ? AdminSite::ErrorSelectComponent : AdminSite::SelectComponent
+        select_content = @template.render(select_component_class.new(**options))
 
         return select_content unless errored
 
@@ -70,10 +71,12 @@ module AdminSite
 
       def labeled_select(method, choices = nil, options = {}, html_options = {}, &)
         options = {
-          label_options: {}
+          label_options: {},
+          error_options: { show: false }
         }.deep_merge(options)
 
         label_options = options.delete(:label_options)
+        label_options[:error_options] = options[:error_options]
 
         label_content = label(method, nil, label_options)
         select_content = select(method, choices, options, html_options, &)
@@ -83,10 +86,12 @@ module AdminSite
 
       def labeled_collection_select(method, collection, value_method, text_method, options = {}, html_options = {})
         options = {
-          label_options: {}
+          label_options: {},
+          error_options: { show: false }
         }.deep_merge(options)
 
         label_options = options.delete(:label_options)
+        label_options[:error_options] = options[:error_options]
 
         label_content = label(method, nil, label_options)
         select_content = collection_select(method, collection, value_method, text_method, options, html_options)
@@ -96,10 +101,12 @@ module AdminSite
 
       def labeled_full_width_select(method, choices = nil, options = {}, html_options = {}, &)
         options = {
-          label_options: {}
+          label_options: {},
+          error_options: { show: false }
         }.deep_merge(options)
 
         label_options = options.delete(:label_options)
+        label_options[:error_options] = options[:error_options]
 
         label_content = label(method, nil, label_options)
         select_content = full_width_select(method, choices, options, html_options, &)
@@ -110,10 +117,12 @@ module AdminSite
       def labeled_full_width_collection_select(method, collection, value_method, text_method, options = {},
                                                html_options = {})
         options = {
-          label_options: {}
+          label_options: {},
+          error_options: { show: false }
         }.deep_merge(options)
 
         label_options = options.delete(:label_options)
+        label_options[:error_options] = options[:error_options]
 
         label_content = label(method, nil, label_options)
         select_content = full_width_collection_select(method, collection, value_method, text_method, options,
