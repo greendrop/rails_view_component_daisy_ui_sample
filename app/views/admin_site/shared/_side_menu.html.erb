@@ -1,0 +1,15 @@
+<ul class="menu p-4 w-80 min-h-full bg-base-200">
+  <li>
+    <details>
+      <summary>
+        <%= Article.model_name.human(count: 2) %>
+      </summary>
+
+      <ul>
+        <li>
+          <%= link_to t('admin_site.general.model_list_title', model: Article.model_name.human(count: 2)), admin_site_articles_path %>
+        </li>
+      </ul>
+    </details>
+  </li>
+</ul>

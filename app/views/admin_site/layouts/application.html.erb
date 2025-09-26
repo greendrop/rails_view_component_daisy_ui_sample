@@ -25,20 +25,49 @@
   </head>
 
   <body>
-    <main class="flex-auto p-4 overflow-y-auto">
-      <% if content_for?(:main_header) %>
-        <div class="container mx-auto my-4">
-          <%= yield(:main_header) %>
+    <%
+      # NOTE: side_menu の有無で表示を切り分ける箇所があるため、事前に取得しておく
+      side_menu = content_for(:side_menu).present? ? yield(:side_menu) : render('admin_site/shared/side_menu')
+      show_side_menu = strip_tags(side_menu).present?
+    %>
+    <div class="drawer">
+      <input class="drawer-toggle" id="navbar-drawer" type="checkbox">
+      <div class="drawer-content flex flex-col h-screen overflow-hidden">
+        <header>
+          <%= render 'admin_site/shared/navbar', show_drawer_icon: show_side_menu %>
+        </header>
+
+        <div class="flex flex-row h-[calc(100vh-4rem)]">
+          <% if show_side_menu %>
+            <aside class="hidden lg:block w-80 flex-none overflow-y-auto">
+              <%= side_menu %>
+            </aside>
+          <% end %>
+
+          <main class="flex-auto p-4 overflow-y-auto">
+            <% if content_for?(:main_header) %>
+              <div class="container mx-auto my-4">
+                <%= yield(:main_header) %>
+              </div>
+            <% end %>
+
+            <div class="container mx-auto my-4">
+              <%= render 'admin_site/shared/flash' %>
+            </div>
+
+            <div class="container mx-auto my-4">
+              <%= yield %>
+            </div>
+          </main>
         </div>
+      </div>
+
+      <% if show_side_menu %>
+        <aside class="drawer-side">
+          <label class="drawer-overlay" for="navbar-drawer"></label>
+          <%= side_menu %>
+        </aside>
       <% end %>
-
-      <div class="container mx-auto my-4">
-        <%= render 'admin_site/shared/flash' %>
-      </div>
-
-      <div class="container mx-auto my-4">
-        <%= yield %>
-      </div>
-    </main>
+    </div>
   </body>
 </html>
