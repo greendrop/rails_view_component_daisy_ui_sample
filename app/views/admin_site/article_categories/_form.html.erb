@@ -1,0 +1,20 @@
+<%# locals: (form:) %>
+
+<% if form.object.errors.any? %>
+  <div class="mb-4">
+    <%=
+      render(
+        AdminSite::FormErrorComponent.new(
+          errors: form.object.errors,
+          except_attributes: %i[name]
+        )
+      )
+    %>
+  </div>
+<% end %>
+
+<%= form.fieldset do %>
+  <div class="mb-4">
+    <%= form.labeled_full_width_text_field :name, error_options: { show: true } %>
+  </div>
+<% end %>
