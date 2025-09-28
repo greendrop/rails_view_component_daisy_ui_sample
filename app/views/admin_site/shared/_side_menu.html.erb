@@ -12,4 +12,17 @@
       </ul>
     </details>
   </li>
+  <li>
+    <details>
+      <summary>
+        <%= ArticleCategory.model_name.human(count: 2) %>
+      </summary>
+
+      <ul>
+        <li>
+          <%= link_to t('admin_site.general.model_list_title', model: ArticleCategory.model_name.human(count: 2)), admin_site_article_categories_path %>
+        </li>
+      </ul>
+    </details>
+  </li>
 </ul>

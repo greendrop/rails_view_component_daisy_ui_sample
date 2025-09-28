@@ -1,0 +1,13 @@
+---
+en:
+  activerecord:
+    models:
+      article_category:
+        one: Article Category
+        other: Article Categories
+    attributes:
+      article_category:
+        id: ID
+        created_at: Created At
+        updated_at: Updated At
+        name: Name

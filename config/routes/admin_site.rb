@@ -5,5 +5,6 @@ scope module: :admin_site, path: '/admin', as: :admin_site do
 
   resource :homes, only: [:show]
 
+  resources :article_categories
   resources :articles
 end

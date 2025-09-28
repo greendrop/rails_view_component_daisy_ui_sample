@@ -1,0 +1,26 @@
+<%
+  title = t('admin_site.general.model_new_title', model: ArticleCategory.model_name.human)
+%>
+
+<% content_for :title, title %>
+
+<% content_for(:main_header) do %>
+  <%= render(AdminSite::MainHeaderComponent.new) do %>
+    <%= render(AdminSite::MainHeaderTitleComponent.new) do %>
+      <%= render(AdminSite::MainHeaderTitleTextComponent.new) do %>
+        <%= title %>
+      <% end %>
+    <% end %>
+    <%= render(AdminSite::MainHeaderActionComponent.new) do %>
+      <%= render(AdminSite::LinkButtonComponent.new(url: admin_site_article_categories_path)) do %>
+        <%= t('admin_site.general.list') %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<%= form_with(model: @article_category, url: admin_site_article_categories_path, builder: AdminSite::FormBuilder) do |form| %>
+  <%= render 'form', form: %>
+
+  <%= form.full_width_primary_submit t('admin_site.general.create') %>
+<% end %>
