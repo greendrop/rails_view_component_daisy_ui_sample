@@ -53,7 +53,7 @@ RSpec.describe AdminSite::SuccessAlertComponent, type: :component do
               render_component_outside_view_context(
                 AdminSite::AlertActionComponent.new.with_content(
                   render_component_outside_view_context(
-                    AdminSite::SuccessButtonComponent.new(size: DaisyUi::SuccessButtonComponent::SIZE_SMALL).with_content('Action')
+                    AdminSite::SuccessButtonComponent.new(size: AdminSite::SuccessButtonComponent::SIZE_SMALL).with_content('Action')
                   )
                 )
               )
