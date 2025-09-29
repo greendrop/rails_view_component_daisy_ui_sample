@@ -3,7 +3,7 @@
 require_relative '../../../support/view_component/test_ext_helpers'
 
 module AdminSite
-  # @logical_path components/admin_site
+  # @logical_path components/admin_site/table
   class TableComponentPreview < Lookbook::Preview
     COMPONENT_CLASS = AdminSite::TableComponent
 

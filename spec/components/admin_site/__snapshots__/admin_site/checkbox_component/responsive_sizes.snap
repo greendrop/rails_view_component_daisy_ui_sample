@@ -1,0 +1,1 @@
+<input type="checkbox" name="enabled" id="enabled" value="1" class="checkbox checkbox-xs xs:checkbox-xs sm:checkbox-sm md:checkbox-md lg:checkbox-lg xl:checkbox-xl"/>
