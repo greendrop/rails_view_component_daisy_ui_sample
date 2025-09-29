@@ -43,33 +43,33 @@ module AdminSite
     def flash_alert_component_class(flash_message_key)
       case flash_message_key
       when :info
-        DaisyUi::InfoAlertComponent
+        AdminSite::InfoAlertComponent
       when :error
-        DaisyUi::ErrorAlertComponent
+        AdminSite::ErrorAlertComponent
       else
-        DaisyUi::AlertComponent
+        AdminSite::AlertComponent
       end
     end
 
     def flash_alert_icon_component_class(flash_message_key)
       case flash_message_key
       when :info
-        DaisyUi::InfoAlertIconComponent
+        AdminSite::InfoAlertIconComponent
       when :error
-        DaisyUi::ErrorAlertIconComponent
+        AdminSite::ErrorAlertIconComponent
       else
-        DaisyUi::InfoAlertIconComponent
+        AdminSite::InfoAlertIconComponent
       end
     end
 
     def flash_alert_button_component_class(flash_message_key)
       case flash_message_key
       when :info
-        DaisyUi::InfoGhostButtonComponent
+        AdminSite::InfoGhostButtonComponent
       when :error
-        DaisyUi::ErrorGhostButtonComponent
+        AdminSite::ErrorGhostButtonComponent
       else
-        DaisyUi::GhostButtonComponent
+        AdminSite::GhostButtonComponent
       end
     end
   end

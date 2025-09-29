@@ -43,33 +43,33 @@ module UserSite
     def flash_alert_component_class(flash_message_key)
       case flash_message_key
       when :info
-        DaisyUi::InfoAlertComponent
+        UserSite::InfoAlertComponent
       when :error
-        DaisyUi::ErrorAlertComponent
+        UserSite::ErrorAlertComponent
       else
-        DaisyUi::AlertComponent
+        UserSite::AlertComponent
       end
     end
 
     def flash_alert_icon_component_class(flash_message_key)
       case flash_message_key
       when :info
-        DaisyUi::InfoAlertIconComponent
+        UserSite::InfoAlertIconComponent
       when :error
-        DaisyUi::ErrorAlertIconComponent
+        UserSite::ErrorAlertIconComponent
       else
-        DaisyUi::InfoAlertIconComponent
+        UserSite::InfoAlertIconComponent
       end
     end
 
     def flash_alert_button_component_class(flash_message_key)
       case flash_message_key
       when :info
-        DaisyUi::InfoGhostButtonComponent
+        UserSite::InfoGhostButtonComponent
       when :error
-        DaisyUi::ErrorGhostButtonComponent
+        UserSite::ErrorGhostButtonComponent
       else
-        DaisyUi::GhostButtonComponent
+        UserSite::GhostButtonComponent
       end
     end
   end

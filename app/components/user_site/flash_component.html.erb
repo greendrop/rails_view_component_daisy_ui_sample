@@ -8,10 +8,10 @@
     <div data-controller="flash">
       <%= render(component_class.new(data: { flash_target: 'alert' })) do %>
         <%= render(icon_component_class.new) %>
-        <%= render(DaisyUi::AlertBodyComponent.new) do %>
+        <%= render(UserSite::AlertBodyComponent.new) do %>
           <%= sanitize(message) %>
         <% end %>
-        <%= render(DaisyUi::AlertActionComponent.new) do %>
+        <%= render(UserSite::AlertActionComponent.new) do %>
           <%= render(button_component_class.new(square: true, data: { action: 'click->flash#hide' })) do %>
             <%= render(FontAwesome::CircleXmarkIconComponent.new) %>
           <% end %>
