@@ -7,7 +7,7 @@ module AdminSite
 
     include ViewComponent::TestExtHelpers
 
-    layout 'daisy_ui/layouts/component_preview'
+    layout 'admin_site/layouts/component_preview'
 
     # @label Default
     def default

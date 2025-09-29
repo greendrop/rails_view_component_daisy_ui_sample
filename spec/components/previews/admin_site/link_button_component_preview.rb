@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# frozen_string_literal: true
-
 module AdminSite
   # @logical_path components/admin_site/link_button
   class LinkButtonComponentPreview < Lookbook::Preview

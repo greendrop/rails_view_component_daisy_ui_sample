@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
-
 RSpec.describe AdminSite::ErrorAlertComponent, type: :component do
   describe 'snapshot' do
     include ActionView::Helpers::OutputSafetyHelper
@@ -55,7 +53,7 @@ RSpec.describe AdminSite::ErrorAlertComponent, type: :component do
               render_component_outside_view_context(
                 AdminSite::AlertActionComponent.new.with_content(
                   render_component_outside_view_context(
-                    AdminSite::ErrorButtonComponent.new(size: AdminSite::ErrorButtonComponent::SIZE_SMALL).with_content('Action')
+                    AdminSite::ErrorButtonComponent.new(size: DaisyUi::ErrorButtonComponent::SIZE_SMALL).with_content('Action')
                   )
                 )
               )
