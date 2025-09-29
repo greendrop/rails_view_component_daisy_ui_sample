@@ -1,8 +1,0 @@
-<div class="alert alert-error alert-vertical sm:alert-horizontal">
-  <i class="fa-solid fa-circle-xmark">
-</i><div>
-  <div>
-  Message
-</div>
-</div>
-</div>
