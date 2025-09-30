@@ -55,7 +55,7 @@ module AdminSite
             render_component_outside_view_context(
               AdminSite::AlertActionComponent.new.with_content(
                 render_component_outside_view_context(
-                  AdminSite::InfoButtonComponent.new(size: DaisyUi::InfoButtonComponent::SIZE_SMALL).with_content('Action')
+                  AdminSite::InfoButtonComponent.new(size: AdminSite::InfoButtonComponent::SIZE_SMALL).with_content('Action')
                 )
               )
             )

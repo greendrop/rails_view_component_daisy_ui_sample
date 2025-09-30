@@ -47,7 +47,7 @@
         <% end %>
         <%= render(AdminSite::TableCellComponent.new) %>
       <% end %>
-      <%= render(DaisyUi::TableBodyComponent.new) do %>
+      <%= render(AdminSite::TableBodyComponent.new) do %>
         <% @articles.each do |article| %>
           <%= render(AdminSite::TableRowComponent.new) do %>
             <%= render(AdminSite::TableCellComponent.new) do %>
