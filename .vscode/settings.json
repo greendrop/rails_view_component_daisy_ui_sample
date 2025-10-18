@@ -1,0 +1,10 @@
+{
+  "editor.formatOnSave": true,
+  "tailwindCSS.includeLanguages": {
+    "erb": "html"
+  },
+  "[css, erb, json, javascript, ruby, typescript]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+}
