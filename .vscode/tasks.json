@@ -1,0 +1,42 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run dev",
+      "type": "shell",
+      "command": "bin/dev"
+    },
+    {
+      "label": "Run dev without web",
+      "type": "shell",
+      "command": "bin/dev -m all=1,web=0"
+    },
+    {
+      "label": "Run rspec",
+      "type": "shell",
+      "command": "bin/rspec"
+    },
+    {
+      "label": "Run rubocop",
+      "type": "shell",
+      "command": "bin/rubocop"
+    },
+    {
+      "label": "Run erblint --lint-all",
+      "type": "shell",
+      "command": "bin/erblint --lint-all"
+    },
+    {
+      "label": "Run npm run lint",
+      "type": "shell",
+      "command": "npm run lint"
+    },
+    {
+      "label": "Run npm run type-check",
+      "type": "shell",
+      "command": "npm run type-check"
+    },
+  ]
+}
