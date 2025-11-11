@@ -75,7 +75,7 @@ jobs:
         continue-on-error: true
 
       - name: Run split tests
-        uses: r7kamura/split-tests-by-timings@4782de3f3298fdc4ffba75c670d175b749239ddf # v0.4.0
+        uses: r7kamura/split-tests-by-timings@5134247c551d8fe78ee44182a8228256e2ecd43e # v0.5.0
         id: split-tests
         with:
           reports: tmp/junit-xml-reports-downloaded
