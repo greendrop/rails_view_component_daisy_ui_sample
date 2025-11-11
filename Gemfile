@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'rails', '~> 8.0.3'
+gem 'rails', '~> 8.0.4'
 
 gem 'bootsnap', require: false
 gem 'importmap-rails'
