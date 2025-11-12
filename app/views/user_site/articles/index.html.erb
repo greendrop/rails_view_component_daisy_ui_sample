@@ -24,7 +24,7 @@
       <%= render(UserSite::CardComponent.new(append_classes: ['mb-4'])) do %>
         <%= render(UserSite::CardBodyComponent.new) do %>
           <%= render(UserSite::CardTitleComponent.new) do %>
-            <%= article.title %>
+            <%= link_to article.title, user_site_article_path(id: article.id) %>
           <% end %>
           <p>
             <%= truncate(article.body) %>
