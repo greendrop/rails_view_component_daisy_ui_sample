@@ -5,5 +5,5 @@ scope module: :user_site, as: :user_site do
 
   resource :homes, only: [:show]
 
-  resources :articles
+  resources :articles, only: %i[index show]
 end
