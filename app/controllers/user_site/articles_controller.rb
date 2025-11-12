@@ -5,7 +5,7 @@ module UserSite
     before_action :set_article, only: %i[show]
 
     def index
-      @articles = Article.all.page(page).per(per_page)
+      @articles = Article.published.page(page).per(per_page)
     end
 
     def show; end
