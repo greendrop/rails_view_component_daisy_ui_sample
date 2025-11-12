@@ -1,16 +1,40 @@
-<p style="color: green"><%= notice %></p>
+<%
+  title = t('user_site.general.model_list_title', model: Article.model_name.human(count: 2))
+%>
 
-<% content_for :title, 'Articles' %>
+<% content_for :title, title %>
 
-<h1>Articles</h1>
-
-<div id="articles">
-  <% @articles.each do |article| %>
-    <%= render article %>
-    <p>
-      <%= link_to 'Show this article', article %>
-    </p>
+<% content_for(:main_header) do %>
+  <%= render(UserSite::MainHeaderComponent.new) do %>
+    <%= render(UserSite::MainHeaderTitleComponent.new) do %>
+      <%= render(UserSite::MainHeaderTitleTextComponent.new) do %>
+        <%= title %>
+      <% end %>
+    <% end %>
   <% end %>
+<% end %>
+
+<div class="mb-4">
+  <%= page_entries_info @articles %>
 </div>
 
-<%= link_to 'New article', new_article_path %>
+<% if @articles.present? %>
+  <div class="mb-4">
+    <% @articles.each do |article| %>
+      <%= render(UserSite::CardComponent.new(append_classes: ['mb-4'])) do %>
+        <%= render(UserSite::CardBodyComponent.new) do %>
+          <%= render(UserSite::CardTitleComponent.new) do %>
+            <%= article.title %>
+          <% end %>
+          <p>
+            <%= truncate(article.body) %>
+          </p>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="mb-4 flex items-center justify-center">
+    <%= paginate @articles, views_prefix: :admin_site %>
+  </div>
+<% end %>
