@@ -1,10 +1,31 @@
-<p style="color: green"><%= notice %></p>
+<%
+  title = t('user_site.general.model_show_title', model: Article.model_name.human)
+%>
 
-<%= render @article %>
+<% content_for :title, title %>
 
-<div>
-  <%= link_to 'Edit this article', edit_article_path(@article) %> |
-  <%= link_to 'Back to articles', articles_path %>
+<% content_for(:main_header) do %>
+  <%= render(UserSite::MainHeaderComponent.new) do %>
+    <%= render(UserSite::MainHeaderTitleComponent.new) do %>
+      <%= render(UserSite::MainHeaderTitleTextComponent.new) do %>
+        <%= title %>
+      <% end %>
+    <% end %>
+    <%= render(UserSite::MainHeaderActionComponent.new) do %>
+      <%= render(UserSite::LinkButtonComponent.new(url: user_site_articles_path)) do %>
+        <%= t('user_site.general.list') %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
 
-  <%= button_to 'Destroy this article', @article, method: :delete %>
-</div>
+<%= render(UserSite::CardComponent.new(append_classes: ['mb-4'])) do %>
+  <%= render(UserSite::CardBodyComponent.new) do %>
+    <%= render(UserSite::CardTitleComponent.new) do %>
+      <%= @article.title %>
+    <% end %>
+    <p>
+      <%= sanitize(@article.body) %>
+    </p>
+  <% end %>
+<% end %>
